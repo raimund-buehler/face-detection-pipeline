@@ -1,4 +1,4 @@
-# face-gaze-pipeline
+# face-detection-pipeline
 
 Processing and analysis pipeline for a computer-vision assisted eye-tracking study: detecting faces 
 and facial landmarks in recorded video, mapping gaze samples onto them, and analysing the resulting
