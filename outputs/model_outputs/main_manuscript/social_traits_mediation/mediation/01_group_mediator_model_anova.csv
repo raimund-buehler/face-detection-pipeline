@@ -1,0 +1,3 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Df,Sum Sq,Mean Sq,F value
+group_mediator_model,Group,2.6637384119924294e-39,<0.001 ***,***,TRUE,significant,1,39335.757916374416,39335.757916374416,253.47360832152705
+group_mediator_model,Residuals,NA,NA,,FALSE,,237,36779.271372328454,155.18679903936058,NA

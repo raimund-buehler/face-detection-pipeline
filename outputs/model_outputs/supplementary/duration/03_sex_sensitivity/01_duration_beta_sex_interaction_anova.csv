@@ -1,0 +1,17 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Chisq,Df
+duration_beta_glmmtmb_sex_interaction,Group,0.9418482716677552,0.942,,FALSE,,0.00532126871073651,1
+duration_beta_glmmtmb_sex_interaction,fix,3.086841319804225e-78,<0.001 ***,***,TRUE,significant,362.3956277954472,3
+duration_beta_glmmtmb_sex_interaction,medication,0.9241042224669691,0.924,,FALSE,,0.47612604902016326,3
+duration_beta_glmmtmb_sex_interaction,Sex,0.826143098773451,0.826,,FALSE,,0.04824648858081143,1
+duration_beta_glmmtmb_sex_interaction,session,0.9828156242737578,0.983,,FALSE,,0.16644269798255426,3
+duration_beta_glmmtmb_sex_interaction,Group:fix,1.5127132696427972e-5,<0.001 ***,***,TRUE,significant,25.042587657122393,3
+duration_beta_glmmtmb_sex_interaction,Group:medication,0.9995782517662546,1.000,,FALSE,,0.013635578047990647,3
+duration_beta_glmmtmb_sex_interaction,fix:medication,0.7780061125495369,0.778,,FALSE,,5.612296596024223,9
+duration_beta_glmmtmb_sex_interaction,Group:Sex,0.5622120328333245,0.562,,FALSE,,0.3358886614623433,1
+duration_beta_glmmtmb_sex_interaction,fix:Sex,7.2534228309488035e-12,<0.001 ***,***,TRUE,significant,54.888303216956125,3
+duration_beta_glmmtmb_sex_interaction,medication:Sex,0.9146516419958888,0.915,,FALSE,,0.5192081781974413,3
+duration_beta_glmmtmb_sex_interaction,Group:fix:medication,0.899310674958964,0.899,,FALSE,,4.178005407292924,9
+duration_beta_glmmtmb_sex_interaction,Group:fix:Sex,2.959699170488529e-4,<0.001 ***,***,TRUE,significant,18.833348018428293,3
+duration_beta_glmmtmb_sex_interaction,Group:medication:Sex,0.8919329754631822,0.892,,FALSE,,0.6195918841372797,3
+duration_beta_glmmtmb_sex_interaction,fix:medication:Sex,0.8629204011409798,0.863,,FALSE,,4.659539254952495,9
+duration_beta_glmmtmb_sex_interaction,Group:fix:medication:Sex,0.9077581771716888,0.908,,FALSE,,4.054958278113908,9

@@ -1,0 +1,2 @@
+test,statistic,parameter,p_value,p_display,estimate,conf_low,conf_high,method,sig,significant_0_05,highlight
+kendall_auci_eye_rate_ctrl,330,NA,0.33548409759252984,0.335,-0.10931174089068828,NA,NA,Kendall's rank correlation tau,,FALSE,

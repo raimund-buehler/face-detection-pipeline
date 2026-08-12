@@ -1,0 +1,10 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Chisq,Df
+duration_beta_filtered_glmmtmb,Group,0.5456680945273511,0.546,,FALSE,,0.3651350584339896,1
+duration_beta_filtered_glmmtmb,fix,3.9978236925915284e-79,<0.001 ***,***,TRUE,significant,366.49478093886074,3
+duration_beta_filtered_glmmtmb,medication,0.9779072797440862,0.978,,FALSE,,0.19802636293243145,3
+duration_beta_filtered_glmmtmb,Sex,0.7678877330967522,0.768,,FALSE,,0.0871070023866491,1
+duration_beta_filtered_glmmtmb,session,0.880255411928021,0.880,,FALSE,,0.6699191326023588,3
+duration_beta_filtered_glmmtmb,Group:fix,7.869264774180739e-8,<0.001 ***,***,TRUE,significant,35.89808584488496,3
+duration_beta_filtered_glmmtmb,Group:medication,0.9942444115610781,0.994,,FALSE,,0.07888916875743143,3
+duration_beta_filtered_glmmtmb,fix:medication,0.36367609110662025,0.364,,FALSE,,9.838995810367207,9
+duration_beta_filtered_glmmtmb,Group:fix:medication,0.6565102490643742,0.657,,FALSE,,6.813686075734551,9

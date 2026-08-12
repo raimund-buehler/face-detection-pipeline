@@ -1,0 +1,4 @@
+test,statistic,parameter,p_value,estimate,conf_low,conf_high,method
+pearson_chisq_yates,2.678445878445877,1,0.1017149495797449,NA,NA,NA,Pearson's Chi-squared test with Yates' continuity correction
+pearson_chisq_uncorrected,3.5089235089235062,1,0.06103910441149193,NA,NA,NA,Pearson's Chi-squared test
+fisher_exact,NA,NA,0.09705789965701038,2.4298847020896033,0.8611855582945185,7.105399903308744,Fisher's Exact Test for Count Data

@@ -1,0 +1,17 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Chisq,Df
+duration_sliding_window_background_beta_sex_interaction_model,Group,0.19142274903853806,0.191,,FALSE,,1.7066334296363879,1
+duration_sliding_window_background_beta_sex_interaction_model,progress_window,6.506853878371929e-19,<0.001 ***,***,TRUE,significant,167.79398151815062,36
+duration_sliding_window_background_beta_sex_interaction_model,medication,1.9167021861390602e-13,<0.001 ***,***,TRUE,significant,62.27739034046551,3
+duration_sliding_window_background_beta_sex_interaction_model,Sex,0.008679255505558616,0.009 **,**,TRUE,significant,6.887665291523846,1
+duration_sliding_window_background_beta_sex_interaction_model,session,6.013076264906203e-10,<0.001 ***,***,TRUE,significant,45.88053536398927,3
+duration_sliding_window_background_beta_sex_interaction_model,Group:progress_window,0.9799799056188764,0.980,,FALSE,,20.78536842295947,36
+duration_sliding_window_background_beta_sex_interaction_model,Group:medication,5.396335355639888e-16,<0.001 ***,***,TRUE,significant,74.19279900930297,3
+duration_sliding_window_background_beta_sex_interaction_model,progress_window:medication,0.9950319109916919,0.995,,FALSE,,73.87371087061885,108
+duration_sliding_window_background_beta_sex_interaction_model,Group:Sex,0.056706064150206126,0.057 .,.,FALSE,trend,3.6311956548719793,1
+duration_sliding_window_background_beta_sex_interaction_model,progress_window:Sex,0.06940283667008831,0.069 .,.,FALSE,trend,49.25950311322395,36
+duration_sliding_window_background_beta_sex_interaction_model,medication:Sex,2.262771358685809e-19,<0.001 ***,***,TRUE,significant,89.93442988665686,3
+duration_sliding_window_background_beta_sex_interaction_model,Group:progress_window:medication,0.9995726637825187,1.000,,FALSE,,65.61426151050459,108
+duration_sliding_window_background_beta_sex_interaction_model,Group:progress_window:Sex,0.06513987423902647,0.065 .,.,FALSE,trend,49.602344536738045,36
+duration_sliding_window_background_beta_sex_interaction_model,Group:medication:Sex,5.42676031916388e-6,<0.001 ***,***,TRUE,significant,27.168743679880638,3
+duration_sliding_window_background_beta_sex_interaction_model,progress_window:medication:Sex,0.230848966242139,0.231,,FALSE,,118.47681021301922,108
+duration_sliding_window_background_beta_sex_interaction_model,Group:progress_window:medication:Sex,0.6208775142385059,0.621,,FALSE,,102.88976130729682,108

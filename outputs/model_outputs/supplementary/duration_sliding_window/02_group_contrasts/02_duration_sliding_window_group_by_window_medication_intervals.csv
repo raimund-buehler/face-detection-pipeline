@@ -1,0 +1,7 @@
+medication,direction,run_id,interval_start,interval_end,first_window,last_window
+PLA,ASD_lt_CTRL,1,0.17500000000000004,0.275,8,8
+PLA,ASD_lt_CTRL,2,0.25,0.475,11,16
+PLA,ASD_lt_CTRL,3,0.425,0.525,18,18
+PLA,ASD_lt_CTRL,4,0.475,0.6000000000000001,20,21
+PLA,ASD_lt_CTRL,5,0.75,0.8750000000000001,31,32
+PLA,ASD_lt_CTRL,6,0.875,1,36,37

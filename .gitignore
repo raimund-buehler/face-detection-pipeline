@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------------------
+# No participant data in this repository, ever.
+# Individual-level data are health-related and are not publicly shared.
+# ---------------------------------------------------------------------------
+data/
+00_data/
+raw/
+recordings/
+*.csv.gz
+*.sav
+*.edf
+*.rds
+*.RData
+
+# Local machine configuration (paths to the data store)
+config/paths.R
+config/paths.py
+.Renviron
+
+# R / Python / editor cruft
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+.DS_Store

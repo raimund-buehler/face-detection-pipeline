@@ -1,0 +1,2 @@
+test,statistic,parameter,p_value,p_display,estimate,conf_low,conf_high,method,sig,significant_0_05,highlight
+kendall_t2t3_eye_rate_asd,280,NA,1,1.000,-0.0017825311942959005,NA,NA,Kendall's rank correlation tau,,FALSE,

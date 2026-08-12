@@ -1,0 +1,10 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Chisq,Df
+duration_beta_glmmtmb,Group,0.7836528909552319,0.784,,FALSE,,0.07538420129502348,1
+duration_beta_glmmtmb,fix,6.79424897354093e-72,<0.001 ***,***,TRUE,significant,333.1029465904684,3
+duration_beta_glmmtmb,medication,0.9198791311512984,0.920,,FALSE,,0.49549905490226237,3
+duration_beta_glmmtmb,Sex,0.9373633960117282,0.937,,FALSE,,0.006175468434088601,1
+duration_beta_glmmtmb,session,0.97856525606492,0.979,,FALSE,,0.19391712882541284,3
+duration_beta_glmmtmb,Group:fix,1.4077386172433171e-7,<0.001 ***,***,TRUE,significant,34.702784752383955,3
+duration_beta_glmmtmb,Group:medication,0.9993156862350674,0.999,,FALSE,,0.0188477941332761,3
+duration_beta_glmmtmb,fix:medication,0.793963151002562,0.794,,FALSE,,5.444548259901508,9
+duration_beta_glmmtmb,Group:fix:medication,0.9409597893292386,0.941,,FALSE,,3.503483043280228,9

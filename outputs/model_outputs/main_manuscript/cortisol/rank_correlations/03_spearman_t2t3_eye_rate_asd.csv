@@ -1,0 +1,2 @@
+test,statistic,parameter,p_value,p_display,estimate,conf_low,conf_high,method,sig,significant_0_05,highlight
+spearman_t2t3_eye_rate_asd,6641.999999999999,NA,0.9340082334037155,0.934,-0.014820473644003055,NA,NA,Spearman's rank correlation rho,,FALSE,
