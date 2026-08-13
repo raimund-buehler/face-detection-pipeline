@@ -1,6 +1,6 @@
 # Face Detection & Gaze Analysis Pipeline
 
-Code for a mobile eye-tracking study of social gaze during live conversation.
+Code for a computer-vision assisted eye-tracking study of social gaze during live conversation.
 Participants wore a head-mounted eye tracker while talking to another person, so
 the region to be measured — the partner's face — moves continuously in the scene
 camera. There is no static area of interest to draw.
@@ -20,8 +20,8 @@ is then tested against each ellipse.
 
 Real annotated frames cannot be published: the scene camera shows the
 participant's conversation partner, with the participant's gaze drawn on top. The
-figure below runs the same code over a generated face that belongs to nobody — the
-face and its keypoints are detected for real, and only the gaze path is invented.
+figure below runs the same code over a synthetic face — the
+face and its keypoints are detected by the code, the gaze path is synthetic.
 
 ![The AOI overlay, on a generated face](docs/detection-demo.png)
 
@@ -60,15 +60,10 @@ in `02_outputs/`.
 
 ## Data
 
-**No participant data is in this repository and none will be.** The measures are
-health-related — clinical group, medication and questionnaire data — and
-individual-level records stay in a private repository under the study's ethics
-approval.
+**No participant data is in this repository and none will be.** 
 
-What that means in practice: `02_outputs/` holds aggregate results only, and the
-scripts expect a `00_data/` directory that is not distributed. Fitted model
-objects are excluded too, since a fitted model carries its model frame — and with
-it the underlying rows — inside the saved object.
+ `02_outputs/` holds aggregate results only, and the
+scripts expect a `00_data/` directory that is not distributed.
 
 The code is therefore readable and reviewable end to end, but not runnable
 without the data.
