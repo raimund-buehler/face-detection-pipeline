@@ -28,7 +28,7 @@ DETECTION = ["scene video\n+ gaze samples",
              "MTCNN face detection\nper frame",
              "face / eye / mouth AOIs\ngaze & fixation hit test"]
 ANALYSIS = ["per-session\ndwell time & rates",
-            "merge questionnaires,\ncortisol, trial metadata",
+            "merge questionnaire\n& trial data",
             "mixed-effects models\nfigures & tables"]
 
 

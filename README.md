@@ -20,10 +20,10 @@ is then tested against each ellipse.
 
 Real annotated frames cannot be published: the scene camera shows the
 participant's conversation partner, with the participant's gaze drawn on top. The
-figure below runs the same code over a public-domain stock portrait instead — the
+figure below runs the same code over a generated face that belongs to nobody — the
 face and its keypoints are detected for real, and only the gaze path is invented.
 
-![The AOI overlay, on a public-domain portrait](docs/detection-demo.png)
+![The AOI overlay, on a generated face](docs/detection-demo.png)
 
 Orange marks the face AOI, red the eyes, blue the mouth. The dotted trail is the
 gaze path and the cyan circle a fixation. The labels on the right report which
@@ -36,18 +36,14 @@ source and licence.
 ## Analysis
 
 The detection output becomes a session-level dataset that is merged with
-questionnaires, salivary cortisol and trial metadata, then analysed with
-mixed-effects models. The study is a within-subject pharmacological trial
-(oxytocin, naltrexone, both, placebo) comparing autistic and non-autistic
+questionnaire and trial data, then analysed with mixed-effects models. The study
+is a within-subject pharmacological trial comparing autistic and non-autistic
 participants, with the gaze measures as the primary outcome.
 
-![Fixation duration by group, over time, and by medication](docs/figure2-gaze-by-group.png)
-
-Panel A contrasts the groups on the proportion of fixation duration to the eyes
-and to the background; panel B follows the same measures across the normalised
-course of the conversation, with bars marking intervals that survive correction;
-panel C breaks the result down by drug condition. A timecourse-only version is in
-[`docs/figure3-timecourse.png`](docs/figure3-timecourse.png).
+Outcomes are the proportion of fixation duration and the fixation rate on each
+area of interest, modelled by group and condition, both overall and across the
+normalised course of the conversation. The resulting figures and model tables are
+in `02_outputs/`.
 
 ## Layout
 
@@ -65,7 +61,7 @@ panel C breaks the result down by drug condition. A timecourse-only version is i
 ## Data
 
 **No participant data is in this repository and none will be.** The measures are
-health-related — clinical group, medication, questionnaire and cortisol data — and
+health-related — clinical group, medication and questionnaire data — and
 individual-level records stay in a private repository under the study's ethics
 approval.
 

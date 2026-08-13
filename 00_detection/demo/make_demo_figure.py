@@ -146,12 +146,6 @@ def main():
                     color="#31c452" if hit else "#f2545b", fontsize=13,
                     fontweight="bold", zorder=7)
 
-    ax.text(18, fh - 18,
-            "public-domain stock portrait · gaze path is synthetic · not a study participant",
-            color="#ffffff", fontsize=9.5, style="italic", va="bottom", zorder=7,
-            bbox=dict(boxstyle="round,pad=0.32", facecolor="#000000", alpha=0.45,
-                      edgecolor="none"))
-
     ax.set_xlim(0, fw); ax.set_ylim(fh, 0)
     ax.set_xticks([]); ax.set_yticks([])
     for s in ax.spines.values():
