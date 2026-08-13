@@ -62,7 +62,7 @@ in `02_outputs/`.
 
 ## Data
 
-**No participant data is in this repository and none will be.** 
+**No participant data is in this repository.** 
 
  `02_outputs/` holds aggregate results only, and the
 scripts expect a `00_data/` directory that is not distributed.
