@@ -1,0 +1,46 @@
+AQ-adjusted Group x AOI x Sex sensitivity note
+
+Question:
+Could the female-driven Group x AOI pattern in the preferred fixation-duration model be partly explained by ASD females having higher AQ scores?
+
+Key result:
+ASD females had the highest AQ scores. AQ showed a significant Group x Sex imbalance:
+Group, F(1,55) = 83.03, p < .001
+Sex, F(1,55) = 4.58, p = .037
+Group x Sex, F(1,55) = 4.23, p = .044
+
+Descriptives:
+ASD females: n = 15, M = 25.9, SD = 4.17
+ASD males: n = 12, M = 21.7, SD = 7.24
+CTRL females: n = 14, M = 8.71, SD = 4.10
+CTRL males: n = 18, M = 10.0, SD = 4.68
+
+Model comparison:
+The AQ-complete main model was preferred over AQ-adjusted models.
+AQ-complete main: AIC = -956.34, BIC = -746.07
+AQ-adjusted: delta AIC = 3.16, delta BIC = 22.28
+AQ-adjusted by sex: delta AIC = 3.52, delta BIC = 41.75
+
+Main interpretation:
+Adding AQ attenuated the female-specific ASD-CTRL contrasts for eyes and background, but did not eliminate the omnibus Group x AOI x Sex interaction.
+
+Female contrasts:
+AQ-complete main model:
+Eyes: z = -2.87, p = .004
+Background: z = 3.92, p < .001
+
+AQ-adjusted model:
+Eyes: z = -1.38, p = .166
+Background: z = 1.01, p = .315
+
+AQ-by-sex adjusted model:
+Eyes: z = -1.64, p = .101
+Background: z = 1.46, p = .144
+
+Omnibus Group x AOI x Sex:
+AQ-complete main: chi-square(3) = 22.4, p < .001
+AQ-adjusted: chi-square(3) = 16.6, p < .001
+AQ-adjusted by sex: chi-square(3) = 15.8, p = .001
+
+Suggested wording if revisited:
+Because AQ scores were highest among ASD females, we tested whether the female-specific diagnostic-group effect was explained by dimensional autistic traits. Adding AQ x AOI terms attenuated the female-specific ASD-CTRL contrasts for eye and background fixation, but did not eliminate the omnibus Group x AOI x Sex interaction. Model comparison did not favor AQ-adjusted models, indicating that AQ captured overlapping trait variance rather than providing a clearly superior account of the diagnostic-group effect.

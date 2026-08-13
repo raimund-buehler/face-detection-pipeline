@@ -1,0 +1,6 @@
+model,term,Sum Sq,Df,F value,Pr(>F),p_display,sig,significant_0_05
+aq_imbalance_group_sex,(Intercept),10036.26666666667,1,391.13684523086476,1.139963019720798e-26,<0.001,***,TRUE
+aq_imbalance_group_sex,Group,2130.4440065681424,1,83.02839844199039,1.3998575156857939e-12,<0.001,***,TRUE
+aq_imbalance_group_sex,Sex,117.59999999999991,1,4.583147750738951,0.03673601930221258,0.037,*,TRUE
+aq_imbalance_group_sex,Group:Sex,108.64543593941858,1,4.234167392464281,0.0443704061040657,0.044,*,TRUE
+aq_imbalance_group_sex,Residuals,1411.2571428571432,55,NA,NA,NA,,FALSE

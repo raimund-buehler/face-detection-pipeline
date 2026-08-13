@@ -1,0 +1,7 @@
+model,NAL_status,T2T3_response,term,contrast,null.value,odds.ratio,std.error,df,null,statistic,p.value,p_display,sig
+t2t3_eye_duration_responder_model,Non-NAL,Decrease,Group,CTRL / ASD,0,1.7704380933409374,0.45820629600749824,Inf,1,2.207132673991373,0.027304791666050085,0.027,*
+t2t3_eye_duration_responder_model,NAL-containing,Decrease,Group,CTRL / ASD,0,0.9394189492595076,0.28655347713085166,Inf,1,-0.20487553824878765,0.8376693674757972,0.838,
+t2t3_eye_duration_responder_model,Non-NAL,Non-response,Group,CTRL / ASD,0,1.160438328068838,0.34443663461548857,Inf,1,0.5013133218476803,0.6161506311039818,0.616,
+t2t3_eye_duration_responder_model,NAL-containing,Non-response,Group,CTRL / ASD,0,1.3176137349143597,0.46029044218916443,Inf,1,0.7895607842602278,0.429784318137419,0.430,
+t2t3_eye_duration_responder_model,Non-NAL,Increase,Group,CTRL / ASD,0,2.0818642779493444,1.2808860592513436,Inf,1,1.1917966148332928,0.23334100345838685,0.233,
+t2t3_eye_duration_responder_model,NAL-containing,Increase,Group,CTRL / ASD,0,0.9612305453143479,0.2790662953007025,Inf,1,-0.13619707950540152,0.891665483872799,0.892,

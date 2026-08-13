@@ -1,0 +1,5 @@
+scenario_shift,successful_fits,total_runs,detect_rate_group_fix_medication,detect_rate_medication,median_p_group_fix_medication,median_p_medication,scenario_label
+0,500,500,0.06,0.088,0.4801247720351467,0.4092128496950663,Null baseline
+0.08,500,500,0.304,0.08,0.1296787941482873,0.38460652218267954,+/-8% shift
+0.12,500,500,0.594,0.116,0.028645994549346014,0.37708945492719476,+/-12% shift
+0.16,500,500,0.888,0.106,0.0019867787641972383,0.405124143339097,+/-16% shift

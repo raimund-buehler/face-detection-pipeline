@@ -1,0 +1,4 @@
+model,formula,n_observations,AIC,BIC,logLik,delta_AIC,delta_BIC,AIC_rank
+aq_complete_main,percentage_fix_duration_beta ~ Group * fix * medication + Group *      fix * Sex + session,879,-956.3396566841081,-746.0731211859604,522.1698283420541,0,0,1
+aq_adjusted,percentage_fix_duration_beta ~ Group * fix * medication + Group *      fix * Sex + AQ_z * fix + session,879,-953.1771069740357,-723.7954318851473,524.5885534870179,3.162549710072426,22.27768930081311,2
+aq_adjusted_by_sex,percentage_fix_duration_beta ~ Group * fix * medication + Group *      fix * Sex + AQ_z * fix * Sex + session,879,-952.8169502020476,-704.3201355224184,528.4084751010238,3.5227064820605847,41.75298566354206,3

@@ -1,0 +1,7 @@
+trait,model,formula,n_observations,AIC,BIC,logLik,delta_AIC,delta_BIC,AIC_rank
+SIAS,trait_aoi,percentage_fix_duration ~ SIAS_z * fix + fix * medication + fix *      Sex + session,887,-986.5623468741173,-852.5026873694492,521.2811734370587,0,13.349848751601144,1
+SIAS,trait_aoi_sex,percentage_fix_duration ~ SIAS_z * fix * Sex + fix * medication +      session,887,-983.0093416310729,-829.7983021971663,523.5046708155364,3.553005243044481,36.054233923884,2
+SIAS,no_trait,percentage_fix_duration ~ fix * medication + fix * Sex + session,887,-980.7608156964802,-865.8525361210503,514.3804078482401,5.801531177637116,0,3
+SIAS,trait_main,percentage_fix_duration ~ SIAS_z + fix * medication + fix * Sex +      session,887,-978.8282690830301,-859.1321445252906,514.4141345415151,7.734077791087202,6.720391595759679,4
+SIAS,trait_aoi_medication,percentage_fix_duration ~ SIAS_z * fix * medication + fix * Sex +      session,887,-966.2618700162709,-774.7480707238877,523.1309350081355,20.300476857846434,91.10446539716258,5
+SIAS,main_analogue,percentage_fix_duration ~ SIAS_z * fix * medication + SIAS_z *      fix * Sex + session,887,-962.4630558812978,-751.7978766596764,525.2315279406489,24.099290992819533,114.05465946137394,6

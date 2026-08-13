@@ -1,0 +1,10 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Chisq,Df
+eyes_phase_duration_beta,(Intercept),2.3645194234267614e-5,<0.001 ***,***,TRUE,significant,17.870550506494066,1
+eyes_phase_duration_beta,Group,0.9669125679563103,0.967,,FALSE,,0.0017206600053845018,1
+eyes_phase_duration_beta,medication,0.982316472356247,0.982,,FALSE,,0.1697619565016035,3
+eyes_phase_duration_beta,phase,0.680264223820042,0.680,,FALSE,,0.1698285520761037,1
+eyes_phase_duration_beta,session,0.32125543909933046,0.321,,FALSE,,3.496198948935878,3
+eyes_phase_duration_beta,Group:medication,0.5369912370177728,0.537,,FALSE,,2.174486326499058,3
+eyes_phase_duration_beta,Group:phase,0.38754694053206945,0.388,,FALSE,,0.74662482201109,1
+eyes_phase_duration_beta,medication:phase,0.8812232033631633,0.881,,FALSE,,0.6657738443387106,3
+eyes_phase_duration_beta,Group:medication:phase,0.7717283676760464,0.772,,FALSE,,1.1221561673676452,3

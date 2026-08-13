@@ -1,0 +1,6 @@
+model,description
+full_anonymized,Main duration model fitted to the anonymized sensitivity dataset.
+exclude_asd_medication_records,Main duration model excluding ASD participants with any medication record.
+exclude_asd_disorder_records,Main duration model excluding ASD participants with any comorbidity/disorder record.
+exclude_asd_medication_or_disorder_records,Main duration model excluding ASD participants with any medication or comorbidity/disorder record.
+adjust_asd_medication_disorder_records,Main duration model with ASD medication and comorbidity/disorder flags added as covariates.

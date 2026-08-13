@@ -1,0 +1,625 @@
+ Family: beta  ( logit )
+Formula:          
+window_fix_duration_prop_beta ~ Group * progress_window * medication +  
+    Group * Sex + session + (1 | ID)
+Data: df_fix
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ -13989.8  -11864.8    7297.9  -14595.8      7907 
+
+Random effects:
+
+Conditional model:
+ Groups Name        Variance Std.Dev.
+ ID     (Intercept) 1.084    1.041   
+Number of obs: 8210, groups:  ID, 68
+
+Dispersion parameter for beta family (): 6.62 
+
+Conditional model:
+                                             Estimate Std. Error z value
+(Intercept)                                -1.4422881  0.2476510  -5.824
+GroupCTRL                                   0.2771001  0.3663948   0.756
+progress_window.L                          -0.3010476  0.1575753  -1.910
+progress_window.Q                           0.2126415  0.1578703   1.347
+progress_window.C                           0.2085896  0.1579682   1.320
+progress_window^4                          -0.0386290  0.1586690  -0.243
+progress_window^5                           0.0224724  0.1578435   0.142
+progress_window^6                          -0.0223795  0.1578742  -0.142
+progress_window^7                           0.5545350  0.1571908   3.528
+progress_window^8                           0.0168863  0.1570809   0.108
+progress_window^9                          -0.1613339  0.1571170  -1.027
+progress_window^10                          0.0339558  0.1564352   0.217
+progress_window^11                          0.0494138  0.1562436   0.316
+progress_window^12                         -0.0092573  0.1562965  -0.059
+progress_window^13                          0.0768225  0.1561475   0.492
+progress_window^14                         -0.1025520  0.1559094  -0.658
+progress_window^15                         -0.0940670  0.1557427  -0.604
+progress_window^16                          0.1292979  0.1558353   0.830
+progress_window^17                          0.1902725  0.1556065   1.223
+progress_window^18                         -0.0604538  0.1554215  -0.389
+progress_window^19                         -0.1071636  0.1557615  -0.688
+progress_window^20                          0.0720759  0.1553348   0.464
+progress_window^21                         -0.0571979  0.1559903  -0.367
+progress_window^22                          0.0011353  0.1557993   0.007
+progress_window^23                         -0.0467846  0.1562966  -0.299
+progress_window^24                          0.0594365  0.1562318   0.380
+progress_window^25                         -0.0098995  0.1564082  -0.063
+progress_window^26                          0.0786190  0.1559877   0.504
+progress_window^27                          0.0025766  0.1557881   0.017
+progress_window^28                          0.0133198  0.1561625   0.085
+progress_window^29                         -0.0421865  0.1557769  -0.271
+progress_window^30                          0.0102333  0.1549807   0.066
+progress_window^31                          0.1242186  0.1561641   0.795
+progress_window^32                          0.0197778  0.1559735   0.127
+progress_window^33                         -0.0434600  0.1555661  -0.279
+progress_window^34                          0.0019880  0.1553213   0.013
+progress_window^35                          0.0173409  0.1563404   0.111
+progress_window^36                         -0.0522657  0.1571364  -0.333
+medicationNAL                              -0.0298546  0.0381059  -0.783
+medicationOXT                               0.0890299  0.0376791   2.363
+medicationPLA                              -0.1282006  0.0377892  -3.393
+Sexm                                        0.4259496  0.3802657   1.120
+sessionsession_2                           -0.1612925  0.0263778  -6.115
+sessionsession_3                            0.0225271  0.0265701   0.848
+sessionsession_4                           -0.0649914  0.0266778  -2.436
+GroupCTRL:progress_window.L                 0.2819880  0.2142283   1.316
+GroupCTRL:progress_window.Q                -0.0258521  0.2141581  -0.121
+GroupCTRL:progress_window.C                -0.3013079  0.2142396  -1.406
+GroupCTRL:progress_window^4                 0.2194410  0.2146229   1.022
+GroupCTRL:progress_window^5                -0.0026556  0.2141818  -0.012
+GroupCTRL:progress_window^6                 0.0540860  0.2137555   0.253
+GroupCTRL:progress_window^7                -0.7352216  0.2137372  -3.440
+GroupCTRL:progress_window^8                -0.0721789  0.2134041  -0.338
+GroupCTRL:progress_window^9                 0.2042732  0.2134863   0.957
+GroupCTRL:progress_window^10               -0.2055845  0.2129808  -0.965
+GroupCTRL:progress_window^11               -0.1056555  0.2128755  -0.496
+GroupCTRL:progress_window^12                0.0763818  0.2128953   0.359
+GroupCTRL:progress_window^13               -0.0397556  0.2126754  -0.187
+GroupCTRL:progress_window^14                0.0763512  0.2124204   0.359
+GroupCTRL:progress_window^15               -0.0483347  0.2122786  -0.228
+GroupCTRL:progress_window^16               -0.2024385  0.2123707  -0.953
+GroupCTRL:progress_window^17               -0.1496696  0.2121481  -0.705
+GroupCTRL:progress_window^18                0.0923109  0.2120555   0.435
+GroupCTRL:progress_window^19                0.0446340  0.2122377   0.210
+GroupCTRL:progress_window^20               -0.0811400  0.2118741  -0.383
+GroupCTRL:progress_window^21                0.0485667  0.2123739   0.229
+GroupCTRL:progress_window^22                0.0373130  0.2121598   0.176
+GroupCTRL:progress_window^23               -0.0029544  0.2125714  -0.014
+GroupCTRL:progress_window^24               -0.0536514  0.2125493  -0.252
+GroupCTRL:progress_window^25                0.0594367  0.2126590   0.279
+GroupCTRL:progress_window^26               -0.0614055  0.2123813  -0.289
+GroupCTRL:progress_window^27                0.0366416  0.2121262   0.173
+GroupCTRL:progress_window^28                0.0114868  0.2124190   0.054
+GroupCTRL:progress_window^29                0.1021740  0.2118210   0.482
+GroupCTRL:progress_window^30               -0.0049521  0.2111530  -0.023
+GroupCTRL:progress_window^31               -0.1498339  0.2112870  -0.709
+GroupCTRL:progress_window^32               -0.0500563  0.2111477  -0.237
+GroupCTRL:progress_window^33                0.0391794  0.2115564   0.185
+GroupCTRL:progress_window^34               -0.0331970  0.2115878  -0.157
+GroupCTRL:progress_window^35               -0.0056989  0.2119021  -0.027
+GroupCTRL:progress_window^36               -0.0046513  0.2133491  -0.022
+GroupCTRL:medicationNAL                     0.2072170  0.0545814   3.796
+GroupCTRL:medicationOXT                     0.1457177  0.0520605   2.799
+GroupCTRL:medicationPLA                     0.5446474  0.0522173  10.430
+progress_window.L:medicationNAL             0.3634014  0.2215603   1.640
+progress_window.Q:medicationNAL             0.2006366  0.2223065   0.903
+progress_window.C:medicationNAL            -0.3942056  0.2218949  -1.777
+progress_window^4:medicationNAL            -0.0782312  0.2224187  -0.352
+progress_window^5:medicationNAL             0.1299859  0.2217228   0.586
+progress_window^6:medicationNAL             0.1529209  0.2221789   0.688
+progress_window^7:medicationNAL            -0.6894850  0.2214053  -3.114
+progress_window^8:medicationNAL             0.0310675  0.2214358   0.140
+progress_window^9:medicationNAL            -0.1124070  0.2215233  -0.507
+progress_window^10:medicationNAL           -0.1024402  0.2210641  -0.463
+progress_window^11:medicationNAL            0.1569506  0.2210101   0.710
+progress_window^12:medicationNAL           -0.1616730  0.2209824  -0.732
+progress_window^13:medicationNAL           -0.1213127  0.2208843  -0.549
+progress_window^14:medicationNAL            0.2355872  0.2206942   1.067
+progress_window^15:medicationNAL            0.1042478  0.2207018   0.472
+progress_window^16:medicationNAL           -0.2054661  0.2205820  -0.931
+progress_window^17:medicationNAL           -0.2588507  0.2204822  -1.174
+progress_window^18:medicationNAL            0.0561505  0.2204666   0.255
+progress_window^19:medicationNAL            0.2001491  0.2205214   0.908
+progress_window^20:medicationNAL           -0.0473810  0.2201725  -0.215
+progress_window^21:medicationNAL           -0.0231158  0.2206555  -0.105
+progress_window^22:medicationNAL            0.0323047  0.2204257   0.147
+progress_window^23:medicationNAL            0.0655313  0.2206755   0.297
+progress_window^24:medicationNAL           -0.0537936  0.2204536  -0.244
+progress_window^25:medicationNAL            0.0222134  0.2205962   0.101
+progress_window^26:medicationNAL           -0.0821422  0.2204282  -0.373
+progress_window^27:medicationNAL            0.0214216  0.2203303   0.097
+progress_window^28:medicationNAL           -0.0161907  0.2203051  -0.073
+progress_window^29:medicationNAL            0.0864175  0.2203611   0.392
+progress_window^30:medicationNAL            0.0017363  0.2196847   0.008
+progress_window^31:medicationNAL           -0.2279311  0.2214097  -1.029
+progress_window^32:medicationNAL            0.0014543  0.2215308   0.007
+progress_window^33:medicationNAL            0.0094446  0.2205022   0.043
+progress_window^34:medicationNAL           -0.0005934  0.2205398  -0.003
+progress_window^35:medicationNAL           -0.0194715  0.2213192  -0.088
+progress_window^36:medicationNAL            0.0918974  0.2220718   0.414
+progress_window.L:medicationOXT            -0.2009193  0.2183265  -0.920
+progress_window.Q:medicationOXT             0.2843940  0.2195629   1.295
+progress_window.C:medicationOXT            -0.4068910  0.2184069  -1.863
+progress_window^4:medicationOXT            -0.3946393  0.2187034  -1.804
+progress_window^5:medicationOXT             0.1889837  0.2186979   0.864
+progress_window^6:medicationOXT             0.0873496  0.2187917   0.399
+progress_window^7:medicationOXT            -0.5325106  0.2181911  -2.441
+progress_window^8:medicationOXT             0.1421071  0.2180082   0.652
+progress_window^9:medicationOXT             0.2411336  0.2180981   1.106
+progress_window^10:medicationOXT           -0.1447758  0.2179234  -0.664
+progress_window^11:medicationOXT           -0.2811373  0.2175215  -1.292
+progress_window^12:medicationOXT            0.0818990  0.2175511   0.376
+progress_window^13:medicationOXT            0.0700923  0.2174667   0.322
+progress_window^14:medicationOXT            0.0384864  0.2173827   0.177
+progress_window^15:medicationOXT            0.1335144  0.2172344   0.615
+progress_window^16:medicationOXT           -0.1802528  0.2171842  -0.830
+progress_window^17:medicationOXT           -0.1994396  0.2170157  -0.919
+progress_window^18:medicationOXT            0.1169307  0.2167739   0.539
+progress_window^19:medicationOXT            0.1735467  0.2171482   0.799
+progress_window^20:medicationOXT           -0.0377986  0.2165699  -0.175
+progress_window^21:medicationOXT            0.0566921  0.2171896   0.261
+progress_window^22:medicationOXT           -0.0312781  0.2168192  -0.144
+progress_window^23:medicationOXT            0.0193779  0.2169521   0.089
+progress_window^24:medicationOXT           -0.0211493  0.2166730  -0.098
+progress_window^25:medicationOXT            0.0076832  0.2166136   0.035
+progress_window^26:medicationOXT           -0.1202450  0.2164355  -0.556
+progress_window^27:medicationOXT           -0.0007740  0.2161783  -0.004
+progress_window^28:medicationOXT            0.0034984  0.2168438   0.016
+progress_window^29:medicationOXT            0.0531786  0.2171135   0.245
+progress_window^30:medicationOXT           -0.0949989  0.2185961  -0.435
+progress_window^31:medicationOXT           -0.1471123  0.2170764  -0.678
+progress_window^32:medicationOXT            0.0520530  0.2187926   0.238
+progress_window^33:medicationOXT            0.0420104  0.2167392   0.194
+progress_window^34:medicationOXT           -0.1515378  0.2181940  -0.695
+progress_window^35:medicationOXT           -0.0308038  0.2186624  -0.141
+progress_window^36:medicationOXT            0.0739165  0.2174522   0.340
+progress_window.L:medicationPLA             0.0068296  0.2204425   0.031
+progress_window.Q:medicationPLA             0.3396428  0.2226365   1.526
+progress_window.C:medicationPLA            -0.5907814  0.2219304  -2.662
+progress_window^4:medicationPLA            -0.4987592  0.2227777  -2.239
+progress_window^5:medicationPLA             0.1593366  0.2221123   0.717
+progress_window^6:medicationPLA            -0.0000750  0.2217583   0.000
+progress_window^7:medicationPLA            -0.7240403  0.2213723  -3.271
+progress_window^8:medicationPLA             0.1330030  0.2215772   0.600
+progress_window^9:medicationPLA             0.1704927  0.2210691   0.771
+progress_window^10:medicationPLA           -0.2299304  0.2208920  -1.041
+progress_window^11:medicationPLA           -0.0010960  0.2208182  -0.005
+progress_window^12:medicationPLA            0.0501377  0.2207450   0.227
+progress_window^13:medicationPLA           -0.1759616  0.2207523  -0.797
+progress_window^14:medicationPLA            0.2389447  0.2204349   1.084
+progress_window^15:medicationPLA            0.1779554  0.2202583   0.808
+progress_window^16:medicationPLA           -0.2707293  0.2205544  -1.227
+progress_window^17:medicationPLA           -0.2068496  0.2203369  -0.939
+progress_window^18:medicationPLA            0.1403547  0.2204506   0.637
+progress_window^19:medicationPLA            0.0599683  0.2206349   0.272
+progress_window^20:medicationPLA           -0.1294570  0.2203082  -0.588
+progress_window^21:medicationPLA            0.1293473  0.2210261   0.585
+progress_window^22:medicationPLA            0.0490156  0.2209070   0.222
+progress_window^23:medicationPLA            0.0302240  0.2215777   0.136
+progress_window^24:medicationPLA           -0.0557046  0.2215473  -0.251
+progress_window^25:medicationPLA           -0.0239681  0.2218685  -0.108
+progress_window^26:medicationPLA           -0.1407148  0.2216476  -0.635
+progress_window^27:medicationPLA            0.0238321  0.2214969   0.108
+progress_window^28:medicationPLA           -0.0438921  0.2226623  -0.197
+progress_window^29:medicationPLA            0.0453197  0.2224362   0.204
+progress_window^30:medicationPLA           -0.0473020  0.2228647  -0.212
+progress_window^31:medicationPLA           -0.1499486  0.2206698  -0.680
+progress_window^32:medicationPLA           -0.0233707  0.2241864  -0.104
+progress_window^33:medicationPLA            0.0762649  0.2222280   0.343
+progress_window^34:medicationPLA           -0.0012351  0.2233150  -0.006
+progress_window^35:medicationPLA           -0.0170235  0.2248932  -0.076
+progress_window^36:medicationPLA            0.0576253  0.2238272   0.257
+GroupCTRL:Sexm                             -0.4281736  0.5166508  -0.829
+GroupCTRL:progress_window.L:medicationNAL  -0.7639984  0.3108152  -2.458
+GroupCTRL:progress_window.Q:medicationNAL   0.1968181  0.3116674   0.632
+GroupCTRL:progress_window.C:medicationNAL   0.6702030  0.3109464   2.155
+GroupCTRL:progress_window^4:medicationNAL  -0.0836492  0.3113309  -0.269
+GroupCTRL:progress_window^5:medicationNAL  -0.0969881  0.3106410  -0.312
+GroupCTRL:progress_window^6:medicationNAL  -0.2380876  0.3108379  -0.766
+GroupCTRL:progress_window^7:medicationNAL   0.5404720  0.3107156   1.739
+GroupCTRL:progress_window^8:medicationNAL   0.2665484  0.3105318   0.858
+GroupCTRL:progress_window^9:medicationNAL   0.0109392  0.3106350   0.035
+GroupCTRL:progress_window^10:medicationNAL  0.0687975  0.3104856   0.222
+GroupCTRL:progress_window^11:medicationNAL  0.1658083  0.3103446   0.534
+GroupCTRL:progress_window^12:medicationNAL  0.1771903  0.3104521   0.571
+GroupCTRL:progress_window^13:medicationNAL  0.0453895  0.3101338   0.146
+GroupCTRL:progress_window^14:medicationNAL -0.3329561  0.3100232  -1.074
+GroupCTRL:progress_window^15:medicationNAL  0.0589195  0.3100074   0.190
+GroupCTRL:progress_window^16:medicationNAL  0.2864098  0.3099195   0.924
+GroupCTRL:progress_window^17:medicationNAL  0.0880786  0.3097770   0.284
+GroupCTRL:progress_window^18:medicationNAL -0.0879577  0.3098576  -0.284
+GroupCTRL:progress_window^19:medicationNAL -0.1536984  0.3098553  -0.496
+GroupCTRL:progress_window^20:medicationNAL  0.0999136  0.3096310   0.323
+GroupCTRL:progress_window^21:medicationNAL -0.0147072  0.3099752  -0.047
+GroupCTRL:progress_window^22:medicationNAL -0.0284162  0.3097802  -0.092
+GroupCTRL:progress_window^23:medicationNAL -0.0040953  0.3100401  -0.013
+GroupCTRL:progress_window^24:medicationNAL  0.0223186  0.3098871   0.072
+GroupCTRL:progress_window^25:medicationNAL -0.0177097  0.3101343  -0.057
+GroupCTRL:progress_window^26:medicationNAL -0.0028970  0.3100627  -0.009
+GroupCTRL:progress_window^27:medicationNAL -0.0546433  0.3100282  -0.176
+GroupCTRL:progress_window^28:medicationNAL -0.0253444  0.3103216  -0.082
+GroupCTRL:progress_window^29:medicationNAL -0.1203629  0.3102687  -0.388
+GroupCTRL:progress_window^30:medicationNAL -0.0298199  0.3099492  -0.096
+GroupCTRL:progress_window^31:medicationNAL  0.2896173  0.3098679   0.935
+GroupCTRL:progress_window^32:medicationNAL  0.1719798  0.3111776   0.553
+GroupCTRL:progress_window^33:medicationNAL  0.0653636  0.3098674   0.211
+GroupCTRL:progress_window^34:medicationNAL  0.0491760  0.3106799   0.158
+GroupCTRL:progress_window^35:medicationNAL  0.0507489  0.3111478   0.163
+GroupCTRL:progress_window^36:medicationNAL -0.0917942  0.3115976  -0.295
+GroupCTRL:progress_window.L:medicationOXT   0.2303646  0.2971799   0.775
+GroupCTRL:progress_window.Q:medicationOXT  -0.0644438  0.2982237  -0.216
+GroupCTRL:progress_window.C:medicationOXT   0.3516140  0.2966298   1.185
+GroupCTRL:progress_window^4:medicationOXT  -0.1755156  0.2971308  -0.591
+GroupCTRL:progress_window^5:medicationOXT   0.2254683  0.2974336   0.758
+GroupCTRL:progress_window^6:medicationOXT   0.2081127  0.2968576   0.701
+GroupCTRL:progress_window^7:medicationOXT   0.4699950  0.2969509   1.583
+GroupCTRL:progress_window^8:medicationOXT  -0.2001673  0.2965026  -0.675
+GroupCTRL:progress_window^9:medicationOXT  -0.0551009  0.2967798  -0.186
+GroupCTRL:progress_window^10:medicationOXT  0.1575653  0.2966252   0.531
+GroupCTRL:progress_window^11:medicationOXT  0.1399706  0.2963176   0.472
+GroupCTRL:progress_window^12:medicationOXT -0.1259826  0.2962975  -0.425
+GroupCTRL:progress_window^13:medicationOXT  0.0144813  0.2961527   0.049
+GroupCTRL:progress_window^14:medicationOXT -0.0848415  0.2960116  -0.287
+GroupCTRL:progress_window^15:medicationOXT  0.0209646  0.2958768   0.071
+GroupCTRL:progress_window^16:medicationOXT  0.2284619  0.2958878   0.772
+GroupCTRL:progress_window^17:medicationOXT  0.2027316  0.2956631   0.686
+GroupCTRL:progress_window^18:medicationOXT -0.1019618  0.2956796  -0.345
+GroupCTRL:progress_window^19:medicationOXT -0.0041525  0.2956976  -0.014
+GroupCTRL:progress_window^20:medicationOXT -0.0075369  0.2954842  -0.026
+GroupCTRL:progress_window^21:medicationOXT -0.0252795  0.2957842  -0.085
+GroupCTRL:progress_window^22:medicationOXT -0.0201319  0.2955031  -0.068
+GroupCTRL:progress_window^23:medicationOXT  0.0281804  0.2955747   0.095
+GroupCTRL:progress_window^24:medicationOXT  0.0618281  0.2952918   0.209
+GroupCTRL:progress_window^25:medicationOXT -0.0180226  0.2951221  -0.061
+GroupCTRL:progress_window^26:medicationOXT  0.1866516  0.2948643   0.633
+GroupCTRL:progress_window^27:medicationOXT  0.0112635  0.2945325   0.038
+GroupCTRL:progress_window^28:medicationOXT  0.0320653  0.2944884   0.109
+GroupCTRL:progress_window^29:medicationOXT -0.0535628  0.2946942  -0.182
+GroupCTRL:progress_window^30:medicationOXT  0.1222137  0.2966726   0.412
+GroupCTRL:progress_window^31:medicationOXT  0.1537439  0.2944098   0.522
+GroupCTRL:progress_window^32:medicationOXT  0.0947305  0.2966110   0.319
+GroupCTRL:progress_window^33:medicationOXT -0.0215190  0.2949027  -0.073
+GroupCTRL:progress_window^34:medicationOXT  0.1022882  0.2971056   0.344
+GroupCTRL:progress_window^35:medicationOXT -0.0432268  0.2967426  -0.146
+GroupCTRL:progress_window^36:medicationOXT  0.0323347  0.2964205   0.109
+GroupCTRL:progress_window.L:medicationPLA  -0.0454770  0.3004392  -0.151
+GroupCTRL:progress_window.Q:medicationPLA  -0.2295306  0.3018199  -0.760
+GroupCTRL:progress_window.C:medicationPLA   0.9381533  0.3013007   3.114
+GroupCTRL:progress_window^4:medicationPLA  -0.0382781  0.3016600  -0.127
+GroupCTRL:progress_window^5:medicationPLA  -0.1666614  0.3014550  -0.553
+GroupCTRL:progress_window^6:medicationPLA   0.1900140  0.3009998   0.631
+GroupCTRL:progress_window^7:medicationPLA   0.9190400  0.3010088   3.053
+GroupCTRL:progress_window^8:medicationPLA   0.1060871  0.3008000   0.353
+GroupCTRL:progress_window^9:medicationPLA  -0.0154736  0.3003948  -0.052
+GroupCTRL:progress_window^10:medicationPLA  0.4408910  0.3003041   1.468
+GroupCTRL:progress_window^11:medicationPLA -0.0534170  0.3003548  -0.178
+GroupCTRL:progress_window^12:medicationPLA -0.2715833  0.3002003  -0.905
+GroupCTRL:progress_window^13:medicationPLA  0.2308650  0.3002188   0.769
+GroupCTRL:progress_window^14:medicationPLA -0.0815316  0.2997919  -0.272
+GroupCTRL:progress_window^15:medicationPLA -0.1321614  0.2997771  -0.441
+GroupCTRL:progress_window^16:medicationPLA  0.2800771  0.3001528   0.933
+GroupCTRL:progress_window^17:medicationPLA  0.2014396  0.2998547   0.672
+GroupCTRL:progress_window^18:medicationPLA -0.2121315  0.2999744  -0.707
+GroupCTRL:progress_window^19:medicationPLA -0.0732328  0.3002071  -0.244
+GroupCTRL:progress_window^20:medicationPLA  0.1544904  0.2998784   0.515
+GroupCTRL:progress_window^21:medicationPLA -0.1320028  0.3004355  -0.439
+GroupCTRL:progress_window^22:medicationPLA -0.0765157  0.3002460  -0.255
+GroupCTRL:progress_window^23:medicationPLA -0.0669232  0.3007671  -0.223
+GroupCTRL:progress_window^24:medicationPLA  0.0362902  0.3008092   0.121
+GroupCTRL:progress_window^25:medicationPLA  0.0140546  0.3010570   0.047
+GroupCTRL:progress_window^26:medicationPLA  0.0683840  0.3009296   0.227
+GroupCTRL:progress_window^27:medicationPLA  0.0157733  0.3006960   0.052
+GroupCTRL:progress_window^28:medicationPLA  0.1303146  0.3018310   0.432
+GroupCTRL:progress_window^29:medicationPLA -0.1081441  0.3010188  -0.359
+GroupCTRL:progress_window^30:medicationPLA  0.0280482  0.3011153   0.093
+GroupCTRL:progress_window^31:medicationPLA  0.1722492  0.3001070   0.574
+GroupCTRL:progress_window^32:medicationPLA  0.0681124  0.3020962   0.225
+GroupCTRL:progress_window^33:medicationPLA -0.1214821  0.3017213  -0.403
+GroupCTRL:progress_window^34:medicationPLA  0.1418558  0.3025127   0.469
+GroupCTRL:progress_window^35:medicationPLA -0.1465296  0.3035107  -0.483
+GroupCTRL:progress_window^36:medicationPLA -0.0270090  0.3034342  -0.089
+                                           Pr(>|z|)    
+(Intercept)                                5.75e-09 ***
+GroupCTRL                                  0.449476    
+progress_window.L                          0.056069 .  
+progress_window.Q                          0.178000    
+progress_window.C                          0.186684    
+progress_window^4                          0.807652    
+progress_window^5                          0.886787    
+progress_window^6                          0.887273    
+progress_window^7                          0.000419 ***
+progress_window^8                          0.914392    
+progress_window^9                          0.304496    
+progress_window^10                         0.828162    
+progress_window^11                         0.751804    
+progress_window^12                         0.952770    
+progress_window^13                         0.622729    
+progress_window^14                         0.510688    
+progress_window^15                         0.545850    
+progress_window^16                         0.406703    
+progress_window^17                         0.221413    
+progress_window^18                         0.697301    
+progress_window^19                         0.491454    
+progress_window^20                         0.642645    
+progress_window^21                         0.713861    
+progress_window^22                         0.994186    
+progress_window^23                         0.764686    
+progress_window^24                         0.703620    
+progress_window^25                         0.949533    
+progress_window^26                         0.614256    
+progress_window^27                         0.986804    
+progress_window^28                         0.932027    
+progress_window^29                         0.786534    
+progress_window^30                         0.947354    
+progress_window^31                         0.426360    
+progress_window^32                         0.899097    
+progress_window^33                         0.779963    
+progress_window^34                         0.989788    
+progress_window^35                         0.911682    
+progress_window^36                         0.739426    
+medicationNAL                              0.433356    
+medicationOXT                              0.018135 *  
+medicationPLA                              0.000693 ***
+Sexm                                       0.262655    
+sessionsession_2                           9.67e-10 ***
+sessionsession_3                           0.396528    
+sessionsession_4                           0.014844 *  
+GroupCTRL:progress_window.L                0.188074    
+GroupCTRL:progress_window.Q                0.903917    
+GroupCTRL:progress_window.C                0.159604    
+GroupCTRL:progress_window^4                0.306568    
+GroupCTRL:progress_window^5                0.990107    
+GroupCTRL:progress_window^6                0.800247    
+GroupCTRL:progress_window^7                0.000582 ***
+GroupCTRL:progress_window^8                0.735193    
+GroupCTRL:progress_window^9                0.338646    
+GroupCTRL:progress_window^10               0.334408    
+GroupCTRL:progress_window^11               0.619665    
+GroupCTRL:progress_window^12               0.719762    
+GroupCTRL:progress_window^13               0.851715    
+GroupCTRL:progress_window^14               0.719270    
+GroupCTRL:progress_window^15               0.819884    
+GroupCTRL:progress_window^16               0.340473    
+GroupCTRL:progress_window^17               0.480502    
+GroupCTRL:progress_window^18               0.663334    
+GroupCTRL:progress_window^19               0.833432    
+GroupCTRL:progress_window^20               0.701747    
+GroupCTRL:progress_window^21               0.819114    
+GroupCTRL:progress_window^22               0.860394    
+GroupCTRL:progress_window^23               0.988911    
+GroupCTRL:progress_window^24               0.800717    
+GroupCTRL:progress_window^25               0.779867    
+GroupCTRL:progress_window^26               0.772483    
+GroupCTRL:progress_window^27               0.862860    
+GroupCTRL:progress_window^28               0.956875    
+GroupCTRL:progress_window^29               0.629550    
+GroupCTRL:progress_window^30               0.981289    
+GroupCTRL:progress_window^31               0.478232    
+GroupCTRL:progress_window^32               0.812604    
+GroupCTRL:progress_window^33               0.853075    
+GroupCTRL:progress_window^34               0.875328    
+GroupCTRL:progress_window^35               0.978544    
+GroupCTRL:progress_window^36               0.982607    
+GroupCTRL:medicationNAL                    0.000147 ***
+GroupCTRL:medicationOXT                    0.005126 ** 
+GroupCTRL:medicationPLA                     < 2e-16 ***
+progress_window.L:medicationNAL            0.100965    
+progress_window.Q:medicationNAL            0.366779    
+progress_window.C:medicationNAL            0.075644 .  
+progress_window^4:medicationNAL            0.725041    
+progress_window^5:medicationNAL            0.557705    
+progress_window^6:medicationNAL            0.491278    
+progress_window^7:medicationNAL            0.001845 ** 
+progress_window^8:medicationNAL            0.888423    
+progress_window^9:medicationNAL            0.611855    
+progress_window^10:medicationNAL           0.643081    
+progress_window^11:medicationNAL           0.477610    
+progress_window^12:medicationNAL           0.464407    
+progress_window^13:medicationNAL           0.582859    
+progress_window^14:medicationNAL           0.285754    
+progress_window^15:medicationNAL           0.636679    
+progress_window^16:medicationNAL           0.351609    
+progress_window^17:medicationNAL           0.240387    
+progress_window^18:medicationNAL           0.798963    
+progress_window^19:medicationNAL           0.364080    
+progress_window^20:medicationNAL           0.829612    
+progress_window^21:medicationNAL           0.916567    
+progress_window^22:medicationNAL           0.883483    
+progress_window^23:medicationNAL           0.766499    
+progress_window^24:medicationNAL           0.807220    
+progress_window^25:medicationNAL           0.919791    
+progress_window^26:medicationNAL           0.709410    
+progress_window^27:medicationNAL           0.922548    
+progress_window^28:medicationNAL           0.941414    
+progress_window^29:medicationNAL           0.694938    
+progress_window^30:medicationNAL           0.993694    
+progress_window^31:medicationNAL           0.303267    
+progress_window^32:medicationNAL           0.994762    
+progress_window^33:medicationNAL           0.965835    
+progress_window^34:medicationNAL           0.997853    
+progress_window^35:medicationNAL           0.929893    
+progress_window^36:medicationNAL           0.679007    
+progress_window.L:medicationOXT            0.357432    
+progress_window.Q:medicationOXT            0.195226    
+progress_window.C:medicationOXT            0.062463 .  
+progress_window^4:medicationOXT            0.071161 .  
+progress_window^5:medicationOXT            0.387516    
+progress_window^6:medicationOXT            0.689719    
+progress_window^7:medicationOXT            0.014664 *  
+progress_window^8:medicationOXT            0.514503    
+progress_window^9:medicationOXT            0.268891    
+progress_window^10:medicationOXT           0.506471    
+progress_window^11:medicationOXT           0.196199    
+progress_window^12:medicationOXT           0.706576    
+progress_window^13:medicationOXT           0.747216    
+progress_window^14:medicationOXT           0.859473    
+progress_window^15:medicationOXT           0.538813    
+progress_window^16:medicationOXT           0.406565    
+progress_window^17:medicationOXT           0.358090    
+progress_window^18:medicationOXT           0.589602    
+progress_window^19:medicationOXT           0.424169    
+progress_window^20:medicationOXT           0.861446    
+progress_window^21:medicationOXT           0.794073    
+progress_window^22:medicationOXT           0.885296    
+progress_window^23:medicationOXT           0.928829    
+progress_window^24:medicationOXT           0.922243    
+progress_window^25:medicationOXT           0.971705    
+progress_window^26:medicationOXT           0.578505    
+progress_window^27:medicationOXT           0.997143    
+progress_window^28:medicationOXT           0.987128    
+progress_window^29:medicationOXT           0.806507    
+progress_window^30:medicationOXT           0.663863    
+progress_window^31:medicationOXT           0.497963    
+progress_window^32:medicationOXT           0.811951    
+progress_window^33:medicationOXT           0.846310    
+progress_window^34:medicationOXT           0.487363    
+progress_window^35:medicationOXT           0.887970    
+progress_window^36:medicationOXT           0.733916    
+progress_window.L:medicationPLA            0.975285    
+progress_window.Q:medicationPLA            0.127122    
+progress_window.C:medicationPLA            0.007768 ** 
+progress_window^4:medicationPLA            0.025168 *  
+progress_window^5:medicationPLA            0.473146    
+progress_window^6:medicationPLA            0.999730    
+progress_window^7:medicationPLA            0.001073 ** 
+progress_window^8:medicationPLA            0.548336    
+progress_window^9:medicationPLA            0.440577    
+progress_window^10:medicationPLA           0.297914    
+progress_window^11:medicationPLA           0.996040    
+progress_window^12:medicationPLA           0.820323    
+progress_window^13:medicationPLA           0.425393    
+progress_window^14:medicationPLA           0.278378    
+progress_window^15:medicationPLA           0.419125    
+progress_window^16:medicationPLA           0.219637    
+progress_window^17:medicationPLA           0.347840    
+progress_window^18:medicationPLA           0.524339    
+progress_window^19:medicationPLA           0.785777    
+progress_window^20:medicationPLA           0.556789    
+progress_window^21:medicationPLA           0.558405    
+progress_window^22:medicationPLA           0.824405    
+progress_window^23:medicationPLA           0.891502    
+progress_window^24:medicationPLA           0.801478    
+progress_window^25:medicationPLA           0.913973    
+progress_window^26:medicationPLA           0.525521    
+progress_window^27:medicationPLA           0.914316    
+progress_window^28:medicationPLA           0.843730    
+progress_window^29:medicationPLA           0.838555    
+progress_window^30:medicationPLA           0.831916    
+progress_window^31:medicationPLA           0.496811    
+progress_window^32:medicationPLA           0.916974    
+progress_window^33:medicationPLA           0.731461    
+progress_window^34:medicationPLA           0.995587    
+progress_window^35:medicationPLA           0.939661    
+progress_window^36:medicationPLA           0.796828    
+GroupCTRL:Sexm                             0.407247    
+GroupCTRL:progress_window.L:medicationNAL  0.013969 *  
+GroupCTRL:progress_window.Q:medicationNAL  0.527713    
+GroupCTRL:progress_window.C:medicationNAL  0.031133 *  
+GroupCTRL:progress_window^4:medicationNAL  0.788174    
+GroupCTRL:progress_window^5:medicationNAL  0.754874    
+GroupCTRL:progress_window^6:medicationNAL  0.443704    
+GroupCTRL:progress_window^7:medicationNAL  0.081957 .  
+GroupCTRL:progress_window^8:medicationNAL  0.390693    
+GroupCTRL:progress_window^9:medicationNAL  0.971908    
+GroupCTRL:progress_window^10:medicationNAL 0.824641    
+GroupCTRL:progress_window^11:medicationNAL 0.593154    
+GroupCTRL:progress_window^12:medicationNAL 0.568170    
+GroupCTRL:progress_window^13:medicationNAL 0.883642    
+GroupCTRL:progress_window^14:medicationNAL 0.282836    
+GroupCTRL:progress_window^15:medicationNAL 0.849263    
+GroupCTRL:progress_window^16:medicationNAL 0.355412    
+GroupCTRL:progress_window^17:medicationNAL 0.776158    
+GroupCTRL:progress_window^18:medicationNAL 0.776514    
+GroupCTRL:progress_window^19:medicationNAL 0.619871    
+GroupCTRL:progress_window^20:medicationNAL 0.746933    
+GroupCTRL:progress_window^21:medicationNAL 0.962157    
+GroupCTRL:progress_window^22:medicationNAL 0.926912    
+GroupCTRL:progress_window^23:medicationNAL 0.989461    
+GroupCTRL:progress_window^24:medicationNAL 0.942585    
+GroupCTRL:progress_window^25:medicationNAL 0.954463    
+GroupCTRL:progress_window^26:medicationNAL 0.992545    
+GroupCTRL:progress_window^27:medicationNAL 0.860095    
+GroupCTRL:progress_window^28:medicationNAL 0.934908    
+GroupCTRL:progress_window^29:medicationNAL 0.698067    
+GroupCTRL:progress_window^30:medicationNAL 0.923354    
+GroupCTRL:progress_window^31:medicationNAL 0.349970    
+GroupCTRL:progress_window^32:medicationNAL 0.580487    
+GroupCTRL:progress_window^33:medicationNAL 0.832934    
+GroupCTRL:progress_window^34:medicationNAL 0.874232    
+GroupCTRL:progress_window^35:medicationNAL 0.870438    
+GroupCTRL:progress_window^36:medicationNAL 0.768305    
+GroupCTRL:progress_window.L:medicationOXT  0.438240    
+GroupCTRL:progress_window.Q:medicationOXT  0.828916    
+GroupCTRL:progress_window.C:medicationOXT  0.235874    
+GroupCTRL:progress_window^4:medicationOXT  0.554720    
+GroupCTRL:progress_window^5:medicationOXT  0.448424    
+GroupCTRL:progress_window^6:medicationOXT  0.483270    
+GroupCTRL:progress_window^7:medicationOXT  0.113482    
+GroupCTRL:progress_window^8:medicationOXT  0.499616    
+GroupCTRL:progress_window^9:medicationOXT  0.852709    
+GroupCTRL:progress_window^10:medicationOXT 0.595285    
+GroupCTRL:progress_window^11:medicationOXT 0.636665    
+GroupCTRL:progress_window^12:medicationOXT 0.670698    
+GroupCTRL:progress_window^13:medicationOXT 0.961000    
+GroupCTRL:progress_window^14:medicationOXT 0.774407    
+GroupCTRL:progress_window^15:medicationOXT 0.943512    
+GroupCTRL:progress_window^16:medicationOXT 0.440041    
+GroupCTRL:progress_window^17:medicationOXT 0.492912    
+GroupCTRL:progress_window^18:medicationOXT 0.730216    
+GroupCTRL:progress_window^19:medicationOXT 0.988796    
+GroupCTRL:progress_window^20:medicationOXT 0.979651    
+GroupCTRL:progress_window^21:medicationOXT 0.931891    
+GroupCTRL:progress_window^22:medicationOXT 0.945684    
+GroupCTRL:progress_window^23:medicationOXT 0.924044    
+GroupCTRL:progress_window^24:medicationOXT 0.834152    
+GroupCTRL:progress_window^25:medicationOXT 0.951305    
+GroupCTRL:progress_window^26:medicationOXT 0.526728    
+GroupCTRL:progress_window^27:medicationOXT 0.969495    
+GroupCTRL:progress_window^28:medicationOXT 0.913294    
+GroupCTRL:progress_window^29:medicationOXT 0.855773    
+GroupCTRL:progress_window^30:medicationOXT 0.680377    
+GroupCTRL:progress_window^31:medicationOXT 0.601524    
+GroupCTRL:progress_window^32:medicationOXT 0.749441    
+GroupCTRL:progress_window^33:medicationOXT 0.941830    
+GroupCTRL:progress_window^34:medicationOXT 0.730634    
+GroupCTRL:progress_window^35:medicationOXT 0.884181    
+GroupCTRL:progress_window^36:medicationOXT 0.913136    
+GroupCTRL:progress_window.L:medicationPLA  0.879685    
+GroupCTRL:progress_window.Q:medicationPLA  0.446963    
+GroupCTRL:progress_window.C:medicationPLA  0.001848 ** 
+GroupCTRL:progress_window^4:medicationPLA  0.899026    
+GroupCTRL:progress_window^5:medicationPLA  0.580362    
+GroupCTRL:progress_window^6:medicationPLA  0.527860    
+GroupCTRL:progress_window^7:medicationPLA  0.002264 ** 
+GroupCTRL:progress_window^8:medicationPLA  0.724326    
+GroupCTRL:progress_window^9:medicationPLA  0.958918    
+GroupCTRL:progress_window^10:medicationPLA 0.142064    
+GroupCTRL:progress_window^11:medicationPLA 0.858844    
+GroupCTRL:progress_window^12:medicationPLA 0.365638    
+GroupCTRL:progress_window^13:medicationPLA 0.441900    
+GroupCTRL:progress_window^14:medicationPLA 0.785652    
+GroupCTRL:progress_window^15:medicationPLA 0.659310    
+GroupCTRL:progress_window^16:medicationPLA 0.350761    
+GroupCTRL:progress_window^17:medicationPLA 0.501717    
+GroupCTRL:progress_window^18:medicationPLA 0.479464    
+GroupCTRL:progress_window^19:medicationPLA 0.807277    
+GroupCTRL:progress_window^20:medicationPLA 0.606430    
+GroupCTRL:progress_window^21:medicationPLA 0.660392    
+GroupCTRL:progress_window^22:medicationPLA 0.798844    
+GroupCTRL:progress_window^23:medicationPLA 0.823918    
+GroupCTRL:progress_window^24:medicationPLA 0.903975    
+GroupCTRL:progress_window^25:medicationPLA 0.962765    
+GroupCTRL:progress_window^26:medicationPLA 0.820235    
+GroupCTRL:progress_window^27:medicationPLA 0.958165    
+GroupCTRL:progress_window^28:medicationPLA 0.665925    
+GroupCTRL:progress_window^29:medicationPLA 0.719400    
+GroupCTRL:progress_window^30:medicationPLA 0.925786    
+GroupCTRL:progress_window^31:medicationPLA 0.565995    
+GroupCTRL:progress_window^32:medicationPLA 0.821617    
+GroupCTRL:progress_window^33:medicationPLA 0.687220    
+GroupCTRL:progress_window^34:medicationPLA 0.639123    
+GroupCTRL:progress_window^35:medicationPLA 0.629250    
+GroupCTRL:progress_window^36:medicationPLA 0.929073    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

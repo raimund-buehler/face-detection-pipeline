@@ -1,0 +1,13 @@
+NAL_status,AUCi_response,Group,n_sessions
+Non-NAL,Decrease,ASD,32
+Non-NAL,Decrease,CTRL,42
+Non-NAL,Non-response,ASD,17
+Non-NAL,Non-response,CTRL,16
+Non-NAL,Increase,ASD,5
+Non-NAL,Increase,CTRL,2
+NAL-containing,Decrease,ASD,23
+NAL-containing,Decrease,CTRL,35
+NAL-containing,Non-response,ASD,15
+NAL-containing,Non-response,CTRL,15
+NAL-containing,Increase,ASD,13
+NAL-containing,Increase,CTRL,9

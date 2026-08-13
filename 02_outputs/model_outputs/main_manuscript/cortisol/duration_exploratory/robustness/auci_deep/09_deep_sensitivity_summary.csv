@@ -1,0 +1,9 @@
+check,value
+base_glmmTMB_interaction_p,0.011341517043510777
+leave_one_session_min_p,0.0028579010225202126
+leave_one_session_max_p,0.06733636177720202
+leave_one_subject_min_p,0.001601195928430276
+leave_one_subject_max_p,0.07533856714104975
+n_high_cook_sessions,12
+cook_cutoff_4_over_n,0.017777777777777778
+permutation_empirical_p,0.019

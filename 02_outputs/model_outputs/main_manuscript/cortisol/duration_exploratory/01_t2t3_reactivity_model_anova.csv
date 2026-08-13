@@ -1,0 +1,3 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Sum Sq,Mean Sq,NumDF,DenDF,F value
+t2t3_reactivity_medication_group,medication,2.2492623119453633e-6,<0.001 ***,***,TRUE,significant,214.50735537079964,71.50245179026655,3,219.00000000029684,10.30766145831735
+t2t3_reactivity_medication_group,Group,0.36790748822793173,0.368,,FALSE,,5.647143376439624,5.647143376439624,1,218.99999999864892,0.814081764659749

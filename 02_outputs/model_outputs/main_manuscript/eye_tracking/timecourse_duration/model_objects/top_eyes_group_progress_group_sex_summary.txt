@@ -1,0 +1,101 @@
+ Family: beta  ( logit )
+Formula:          
+window_fix_duration_prop_beta ~ Group * progress_window + Group *  
+    Sex + session + (1 | ID)
+Data: df_fix
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+ -14141.1  -13573.0    7151.5  -14303.1      8129 
+
+Random effects:
+
+Conditional model:
+ Groups Name        Variance Std.Dev.
+ ID     (Intercept) 1.04     1.02    
+Number of obs: 8210, groups:  ID, 68
+
+Dispersion parameter for beta family (): 6.35 
+
+Conditional model:
+                               Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                  -1.445e+00  2.416e-01  -5.979 2.24e-09 ***
+GroupCTRL                     4.672e-01  3.576e-01   1.306 0.191404    
+progress_window.L            -2.605e-01  7.857e-02  -3.315 0.000915 ***
+progress_window.Q             4.137e-01  7.891e-02   5.243 1.58e-07 ***
+progress_window.C            -1.478e-01  7.846e-02  -1.884 0.059525 .  
+progress_window^4            -2.850e-01  7.859e-02  -3.626 0.000287 ***
+progress_window^5             1.356e-01  7.858e-02   1.726 0.084385 .  
+progress_window^6             3.979e-02  7.856e-02   0.507 0.612484    
+progress_window^7             6.221e-02  7.844e-02   0.793 0.427753    
+progress_window^8             1.000e-01  7.846e-02   1.275 0.202380    
+progress_window^9            -8.611e-02  7.843e-02  -1.098 0.272270    
+progress_window^10           -8.956e-02  7.844e-02  -1.142 0.253575    
+progress_window^11            1.839e-02  7.842e-02   0.235 0.814561    
+progress_window^12           -1.442e-02  7.839e-02  -0.184 0.854075    
+progress_window^13            1.559e-02  7.839e-02   0.199 0.842359    
+progress_window^14            2.455e-02  7.835e-02   0.313 0.754026    
+progress_window^15            1.129e-02  7.833e-02   0.144 0.885421    
+progress_window^16           -3.461e-02  7.835e-02  -0.442 0.658715    
+progress_window^17            2.115e-02  7.831e-02   0.270 0.787076    
+progress_window^18            2.082e-02  7.835e-02   0.266 0.790482    
+progress_window^19            1.032e-03  7.837e-02   0.013 0.989493    
+progress_window^20            1.556e-02  7.825e-02   0.199 0.842383    
+progress_window^21           -1.407e-02  7.842e-02  -0.179 0.857646    
+progress_window^22            1.470e-02  7.834e-02   0.188 0.851146    
+progress_window^23           -1.838e-02  7.840e-02  -0.234 0.814600    
+progress_window^24            2.501e-02  7.832e-02   0.319 0.749528    
+progress_window^25           -6.580e-03  7.834e-02  -0.084 0.933063    
+progress_window^26           -9.090e-03  7.836e-02  -0.116 0.907652    
+progress_window^27            1.338e-02  7.831e-02   0.171 0.864305    
+progress_window^28            3.344e-06  7.852e-02   0.000 0.999966    
+progress_window^29            6.689e-03  7.863e-02   0.085 0.932203    
+progress_window^30           -2.889e-02  7.902e-02  -0.366 0.714637    
+progress_window^31           -8.168e-03  7.844e-02  -0.104 0.917071    
+progress_window^32            2.820e-02  7.940e-02   0.355 0.722443    
+progress_window^33           -1.005e-02  7.862e-02  -0.128 0.898276    
+progress_window^34           -3.328e-02  7.910e-02  -0.421 0.673960    
+progress_window^35            6.620e-04  7.938e-02   0.008 0.993346    
+progress_window^36            3.934e-03  7.892e-02   0.050 0.960243    
+Sexm                          4.114e-01  3.724e-01   1.105 0.269235    
+sessionsession_2             -1.243e-01  2.633e-02  -4.721 2.35e-06 ***
+sessionsession_3              2.470e-03  2.660e-02   0.093 0.926028    
+sessionsession_4             -3.749e-02  2.688e-02  -1.395 0.163117    
+GroupCTRL:progress_window.L   1.705e-01  1.084e-01   1.572 0.115877    
+GroupCTRL:progress_window.Q  -5.390e-02  1.087e-01  -0.496 0.619977    
+GroupCTRL:progress_window.C   1.749e-01  1.082e-01   1.617 0.105859    
+GroupCTRL:progress_window^4   1.512e-01  1.083e-01   1.396 0.162744    
+GroupCTRL:progress_window^5   1.756e-03  1.084e-01   0.016 0.987072    
+GroupCTRL:progress_window^6   1.017e-01  1.082e-01   0.940 0.347238    
+GroupCTRL:progress_window^7  -2.403e-01  1.082e-01  -2.220 0.026392 *  
+GroupCTRL:progress_window^8  -5.466e-02  1.082e-01  -0.505 0.613365    
+GroupCTRL:progress_window^9   1.923e-01  1.082e-01   1.778 0.075441 .  
+GroupCTRL:progress_window^10 -3.273e-02  1.082e-01  -0.303 0.762235    
+GroupCTRL:progress_window^11 -6.387e-02  1.082e-01  -0.590 0.554995    
+GroupCTRL:progress_window^12  1.865e-02  1.081e-01   0.172 0.863056    
+GroupCTRL:progress_window^13  4.605e-02  1.082e-01   0.426 0.670280    
+GroupCTRL:progress_window^14 -4.205e-02  1.081e-01  -0.389 0.697205    
+GroupCTRL:progress_window^15 -6.716e-02  1.081e-01  -0.621 0.534416    
+GroupCTRL:progress_window^16 -6.908e-03  1.081e-01  -0.064 0.949055    
+GroupCTRL:progress_window^17 -1.733e-02  1.081e-01  -0.160 0.872631    
+GroupCTRL:progress_window^18 -6.515e-03  1.081e-01  -0.060 0.951966    
+GroupCTRL:progress_window^19 -1.288e-02  1.081e-01  -0.119 0.905203    
+GroupCTRL:progress_window^20 -1.871e-02  1.081e-01  -0.173 0.862586    
+GroupCTRL:progress_window^21  8.468e-03  1.082e-01   0.078 0.937604    
+GroupCTRL:progress_window^22  5.683e-03  1.081e-01   0.053 0.958080    
+GroupCTRL:progress_window^23 -1.714e-02  1.082e-01  -0.158 0.874095    
+GroupCTRL:progress_window^24 -1.946e-02  1.081e-01  -0.180 0.857127    
+GroupCTRL:progress_window^25  5.221e-02  1.081e-01   0.483 0.629067    
+GroupCTRL:progress_window^26  8.398e-03  1.081e-01   0.078 0.938052    
+GroupCTRL:progress_window^27  3.066e-02  1.080e-01   0.284 0.776508    
+GroupCTRL:progress_window^28  5.009e-02  1.081e-01   0.463 0.643061    
+GroupCTRL:progress_window^29  3.348e-02  1.081e-01   0.310 0.756743    
+GroupCTRL:progress_window^30  3.417e-02  1.085e-01   0.315 0.752935    
+GroupCTRL:progress_window^31  2.051e-03  1.081e-01   0.019 0.984859    
+GroupCTRL:progress_window^32  2.520e-02  1.090e-01   0.231 0.817106    
+GroupCTRL:progress_window^33  1.319e-02  1.083e-01   0.122 0.903057    
+GroupCTRL:progress_window^34  3.469e-02  1.089e-01   0.318 0.750110    
+GroupCTRL:progress_window^35 -4.095e-02  1.090e-01  -0.376 0.707244    
+GroupCTRL:progress_window^36 -2.699e-02  1.087e-01  -0.248 0.803979    
+GroupCTRL:Sexm               -3.927e-01  5.059e-01  -0.776 0.437678    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

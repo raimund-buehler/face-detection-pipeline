@@ -1,0 +1,5 @@
+Scenario,Maximum injected shift (BOTH),Successful fits,Detection rate: AOI x medication,Median p: AOI x medication,Detection rate: Group x AOI x medication,Median p: Group x AOI x medication
+Null baseline,0%,500/500,8%,0.459,7%,0.470
+"BOTH +/-8%, OXT/NAL +/-4%",8%,500/500,34%,0.122,7%,0.510
+"BOTH +/-12%, OXT/NAL +/-6%",12%,500/500,72%,0.013,5%,0.478
+"BOTH +/-16%, OXT/NAL +/-8%",16%,500/500,93%,0.000,6%,0.473

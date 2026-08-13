@@ -1,0 +1,17 @@
+Statistical analysis
+
+Eye-tracking analyses focused on fixation-duration allocation rather than fixation counts. The primary dependent variable was the proportion of total fixation duration allocated to each area of interest (AOI; eyes, mouth, face, background) per session (percentage_fix_duration; bounded in (0, 1)). This outcome was selected because it directly quantifies how viewing time is distributed across AOIs and is therefore straightforward to interpret as attentional allocation. By contrast, fixation counts primarily reflect event frequency and can vary with interview length, overall gaze activity, and fixation-segmentation characteristics, making them less specific to allocation across regions.
+
+Primary inferential analyses were conducted using beta regression models fit with glmmTMB. The main model included Group (ASD, CTRL), AOI, Medication condition (BOTH, NAL, OXT, PLA), Sex, and Session as fixed effects, with interactions specified to test the preregistered hypotheses on group differences across AOIs and medication conditions. Model specification was finalized via a predefined selection workflow that compared theoretically plausible fixed-effect variants (including medication- and sex-related interaction structures) and random-effect candidates. Because the collapsed session-level dataset provides one row per subject x medication x AOI cell, random-slope structures were not identifiable and random-intercept formulations showed singular/unstable fits without improving information criteria. We therefore retained the most parsimonious model with the best overall fit/diagnostic profile among candidate models. The final model formula was:
+
+percentage_fix_duration ~ Group * AOI * Medication + Group * AOI * Sex + Session
+
+Inference for fixed effects was based on type-III tests (Wald chi-square / likelihood-ratio framework). Follow-up contrasts were estimated using emmeans with multiplicity correction. Planned post-hoc tests examined (i) group contrasts within AOIs, (ii) sex-stratified group contrasts within AOIs, and (iii) AOI pairwise contrasts on the response scale. Medication-specific group contrasts were reported as exploratory follow-ups when the corresponding omnibus medication interactions were not significant.
+
+To examine temporal dynamics, we conducted a higher-resolution timecourse follow-up using normalized interview progress bins. These analyses were framed as model-aligned follow-ups to the primary inferential model and used the same outcome family (fixation-duration proportion with beta models). In line with the main model, primary interpretation emphasized omnibus interaction tests; condition-specific contrasts and interval-level effects were treated as exploratory where omnibus interaction support was absent or weak.
+
+Dimensional trait analyses (AQ and SIAS) were conducted as theory-aligned follow-ups to the main model by replacing the categorical group term with dimensional predictors while preserving AOI- and medication-related structure for comparability of interpretation. These analyses were intended to test whether dimensional variation recapitulated the categorical pattern observed in the main model.
+
+Additional sensitivity analyses, model-comparison details, diagnostics, menstrual-cycle analyses, and cortisol-related exploratory analyses are reported in the Supplementary Material.
+
+All analyses were run in R using glmmTMB, car, emmeans, DHARMa, and ggplot2.

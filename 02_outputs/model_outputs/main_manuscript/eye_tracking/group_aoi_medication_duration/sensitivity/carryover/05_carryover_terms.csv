@@ -1,0 +1,7 @@
+model,term,Chisq,Df,p_value,p_display,sig,significant_0_05
+previous_medication_main,previous_medication,0.1714485139580803,3,0.9820612842978571,0.982,,FALSE
+previous_medication_by_aoi,previous_medication,0.3203765414528888,3,0.9561517379788077,0.956,,FALSE
+previous_components_main,previous_nal,0.043399631782465184,1,0.834974601480891,0.835,,FALSE
+previous_components_main,previous_oxt,0.011435126157144466,1,0.9148404279428067,0.915,,FALSE
+previous_components_by_aoi,previous_nal,0.04513213542961241,1,0.8317612453552574,0.832,,FALSE
+previous_components_by_aoi,previous_oxt,0.016415805079573863,1,0.8980507021768455,0.898,,FALSE

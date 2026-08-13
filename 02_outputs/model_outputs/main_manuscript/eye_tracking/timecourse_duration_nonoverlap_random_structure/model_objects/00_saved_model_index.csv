@@ -1,0 +1,4 @@
+fix,file,formula,converged,pdHess,AIC,BIC,logLik
+Eyes,eyes_best_aic_subject_session.rds,y ~ Group * progress_bin * medication + Sex + session + (1 | ID) + (1 | subject_session),TRUE,TRUE,-4248.771092083101,-3752.4524547879655,2211.3855460415507
+Background,background_best_aic_medication_diag.rds,y ~ Group * progress_bin * medication + Sex + session + (1 | ID) + diag(0 + medication | ID),TRUE,TRUE,-2577.883338245003,-2064.4502651810694,1378.9416691225015
+Background,background_best_bic_subject_session.rds,y ~ Group * progress_bin * medication + Sex + session + (1 | ID) + (1 | subject_session),TRUE,TRUE,-2570.3200754863597,-2074.001438191224,1372.1600377431798

@@ -1,0 +1,8 @@
+model,formula,n_observations,n_participants,AIC,BIC,logLik,singular
+main,T2T3 ~ Group * medication + (1 | anon_id),243,73,1181.9019244175963,1216.8325388510018,-580.9509622087982,FALSE
+medication_type_adjusted,T2T3 ~ Group * medication + asd_med_ssri + asd_med_other + (1 |      anon_id),243,73,1183.8292074554556,1225.7459447755423,-579.9146037277278,TRUE
+medication_type_moderation,T2T3 ~ Group * medication + (asd_med_ssri + asd_med_other) *      medication + (1 | anon_id),243,73,1191.2556896727522,1254.130795652882,-577.6278448363761,TRUE
+disorder_type_adjusted,T2T3 ~ Group * medication + asd_dis_adhd + asd_dis_dep + asd_dis_other +      (1 | anon_id),243,73,1184.1982673340526,1229.6080660974797,-579.0991336670263,TRUE
+disorder_type_moderation,T2T3 ~ Group * medication + (asd_dis_adhd + asd_dis_dep + asd_dis_other) *      medication + (1 | anon_id),243,73,1187.9931482699917,1264.8405000234839,-571.9965741349959,TRUE
+medication_and_disorder_type_adjusted,T2T3 ~ Group * medication + asd_med_ssri + asd_med_other + asd_dis_adhd +      asd_dis_dep + asd_dis_other + (1 | anon_id),243,73,1183.139267621569,1235.5351892716772,-576.5696338107845,TRUE
+medication_and_disorder_type_moderation,T2T3 ~ Group * medication + (asd_med_ssri + asd_med_other + asd_dis_adhd +      asd_dis_dep + asd_dis_other) * medication + (1 | anon_id),243,73,1194.8651096531642,1299.6569529533806,-567.4325548265821,TRUE

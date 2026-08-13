@@ -1,0 +1,13 @@
+Exploratory sliding-window duration timecourse models
+
+Top models:
+window_fix_duration_prop_beta ~ Group * progress_window + Group * Sex + session + (1 | ID)
+
+Medication models:
+window_fix_duration_prop_beta ~ Group * progress_window * medication + Group * Sex + session + (1 | ID)
+
+Note:
+Because the medication models include Group * Sex but not Group * medication * Sex, female medication attenuation tests are algebraically identical to the overall attenuation tests.
+
+Study-design caution:
+Medication was administered within subject, with one medication condition per interview session and randomized session order. These sliding-window models use only (1 | ID) and should therefore be treated as exploratory/descriptive unless confirmed by models accounting for participant-session or medication-within-participant dependency. See docs/study_design_modeling_notes.md.

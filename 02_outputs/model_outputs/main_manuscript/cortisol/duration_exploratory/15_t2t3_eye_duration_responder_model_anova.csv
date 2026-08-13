@@ -1,0 +1,10 @@
+model,term,Chisq,Df,Pr(>Chisq),p_display,sig,significant_0_05
+t2t3_eye_duration_responder_model,(Intercept),30.502590638666913,1,3.334209682990838e-8,<0.001,***,TRUE
+t2t3_eye_duration_responder_model,Group,4.871434640600308,1,0.027304791666050113,0.027,*,TRUE
+t2t3_eye_duration_responder_model,T2T3_response,0.503877089395692,2,0.777292505346933,0.777,,FALSE
+t2t3_eye_duration_responder_model,NAL_status,0.8482259232398586,1,0.357054700376626,0.357,,FALSE
+t2t3_eye_duration_responder_model,session,4.511995657329171,3,0.2112227945964174,0.211,,FALSE
+t2t3_eye_duration_responder_model,Group:T2T3_response,2.4970366870244716,2,0.2869296131894519,0.287,,FALSE
+t2t3_eye_duration_responder_model,Group:NAL_status,5.380036448540131,1,0.02036845250581181,0.020,*,TRUE
+t2t3_eye_duration_responder_model,T2T3_response:NAL_status,1.852666961362559,2,0.3960030044817628,0.396,,FALSE
+t2t3_eye_duration_responder_model,Group:T2T3_response:NAL_status,3.2977526241510158,2,0.19226583407766504,0.192,,FALSE

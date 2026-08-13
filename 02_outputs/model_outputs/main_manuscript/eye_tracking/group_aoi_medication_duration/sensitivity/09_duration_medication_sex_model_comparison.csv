@@ -1,0 +1,5 @@
+model,formula,AIC,BIC,logLik,df,conv,pdHess,delta_AIC,delta_BIC
+preferred,percentage_fix_duration ~ Group * fix * medication + Group * fix * Sex + session,-1014.5948075055601,-802.3702181219098,551.29740375278,44,TRUE,TRUE,0,0
+add_med_sex,percentage_fix_duration ~ Group * fix * medication + Group * fix * Sex + medication * Sex + session,-1009.3604290458366,-782.6659812951193,551.6802145229183,47,TRUE,TRUE,5.23437845972353,19.70423682679052
+add_fix_med_sex,percentage_fix_duration ~ Group * fix * medication + Group * fix * Sex + fix * medication * Sex + session,-996.521469706769,-726.4174468548506,554.2607348533845,56,TRUE,TRUE,18.073337798791044,75.95277126705923
+full_fourway,percentage_fix_duration ~ Group * fix * medication * Sex + session,-975.4599648672299,-647.4765085470433,555.729982433615,68,TRUE,TRUE,39.134842638330156,154.89370957486653

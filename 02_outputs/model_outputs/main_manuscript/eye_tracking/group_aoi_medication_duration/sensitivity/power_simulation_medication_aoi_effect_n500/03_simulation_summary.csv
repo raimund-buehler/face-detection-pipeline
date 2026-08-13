@@ -1,0 +1,5 @@
+max_shift,successful_fits,total_runs,detect_rate_fix_medication,detect_rate_group_fix_medication,median_p_fix_medication,median_p_group_fix_medication,scenario_label
+0,500,500,0.08,0.068,0.4588029821382756,0.4695541594784135,Null baseline
+0.08,500,500,0.342,0.07,0.12248766743469709,0.5103763592612411,"BOTH +/-8%, OXT/NAL +/-4%"
+0.12,500,500,0.718,0.054,0.012511977553957686,0.47803208450169105,"BOTH +/-12%, OXT/NAL +/-6%"
+0.16,500,500,0.93,0.058,3.471957671594661e-4,0.47307933555740445,"BOTH +/-16%, OXT/NAL +/-8%"

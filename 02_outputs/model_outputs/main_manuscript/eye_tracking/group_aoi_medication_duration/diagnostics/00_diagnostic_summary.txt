@@ -1,0 +1,15 @@
+Main fixation-duration model diagnostics (no random effects)
+
+Model:
+percentage_fix_duration ~ Group * fix * medication + Group * fix * Sex + session
+
+N observations: 919
+N participants: 68
+AIC: -1014.595
+DHARMa uniformity test p = 0.1026
+DHARMa dispersion test p = 0.28
+DHARMa outlier test p = 0.0913
+DHARMa zero-inflation test p = 1
+check_singularity() = FALSE
+check_overdispersion() dispersion ratio: 0.9455
+check_overdispersion() p = 0.24

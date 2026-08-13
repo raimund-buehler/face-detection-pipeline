@@ -1,0 +1,17 @@
+model,Group,Sex,n_participants
+full_anonymized,ASD,f,18
+full_anonymized,ASD,m,13
+full_anonymized,CTRL,f,15
+full_anonymized,CTRL,m,22
+exclude_asd_medication_records,ASD,f,5
+exclude_asd_medication_records,ASD,m,7
+exclude_asd_medication_records,CTRL,f,15
+exclude_asd_medication_records,CTRL,m,22
+exclude_asd_disorder_records,ASD,f,3
+exclude_asd_disorder_records,ASD,m,6
+exclude_asd_disorder_records,CTRL,f,15
+exclude_asd_disorder_records,CTRL,m,22
+exclude_asd_medication_or_disorder_records,ASD,f,2
+exclude_asd_medication_or_disorder_records,ASD,m,4
+exclude_asd_medication_or_disorder_records,CTRL,f,15
+exclude_asd_medication_or_disorder_records,CTRL,m,22

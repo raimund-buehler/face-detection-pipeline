@@ -1,0 +1,3 @@
+Group,n_participants,n_any_medication_record,n_any_disorder_record,n_any_medication_or_disorder_record
+ASD,34,19,22,25
+CTRL,39,0,0,0

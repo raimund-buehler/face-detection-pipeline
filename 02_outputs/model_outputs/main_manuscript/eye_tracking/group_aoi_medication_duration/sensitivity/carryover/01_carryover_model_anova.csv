@@ -1,0 +1,75 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Chisq,Df
+base_sessions_2_to_4,(Intercept),7.973189315307628e-23,<0.001 ***,***,TRUE,significant,96.72314119556945,1
+base_sessions_2_to_4,Group,0.6181269466347754,0.618,,FALSE,,0.2485089318860653,1
+base_sessions_2_to_4,fix,1.4699909650422736e-13,<0.001 ***,***,TRUE,significant,62.81644528423325,3
+base_sessions_2_to_4,medication,0.7132856402426833,0.713,,FALSE,,1.3670100793976434,3
+base_sessions_2_to_4,Sex,0.4974384927906918,0.497,,FALSE,,0.460397000764398,1
+base_sessions_2_to_4,session,0.9797914598791451,0.980,,FALSE,,0.04083105200699651,2
+base_sessions_2_to_4,Group:fix,0.08570145503942053,0.086 .,.,FALSE,trend,6.602637139488265,3
+base_sessions_2_to_4,Group:medication,0.9670095363035932,0.967,,FALSE,,0.26199861143917585,3
+base_sessions_2_to_4,fix:medication,0.31671443995892334,0.317,,FALSE,,10.431237834036788,9
+base_sessions_2_to_4,Group:Sex,0.671472047034269,0.671,,FALSE,,0.17988504805045555,1
+base_sessions_2_to_4,fix:Sex,7.299592546273297e-10,<0.001 ***,***,TRUE,significant,45.48445773188779,3
+base_sessions_2_to_4,Group:fix:medication,0.3906959374658745,0.391,,FALSE,,9.520285933378698,9
+base_sessions_2_to_4,Group:fix:Sex,8.381370100986641e-4,<0.001 ***,***,TRUE,significant,16.639729784021778,3
+previous_medication_main,(Intercept),1.0142041534584499e-16,<0.001 ***,***,TRUE,significant,68.94164497733314,1
+previous_medication_main,Group,0.6143605703009937,0.614,,FALSE,,0.2538737391185541,1
+previous_medication_main,fix,1.4788543138803607e-13,<0.001 ***,***,TRUE,significant,62.80423393919399,3
+previous_medication_main,medication,0.7057591022508244,0.706,,FALSE,,1.399042873825069,3
+previous_medication_main,Sex,0.5098866543446592,0.510,,FALSE,,0.43429970721010935,1
+previous_medication_main,session,0.9731532556217248,0.973,,FALSE,,0.05442740170434573,2
+previous_medication_main,previous_medication,0.9820612842978571,0.982,,FALSE,,0.1714485139580803,3
+previous_medication_main,Group:fix,0.08500824924514053,0.085 .,.,FALSE,trend,6.621067549747634,3
+previous_medication_main,Group:medication,0.9626813542418611,0.963,,FALSE,,0.2857743532362628,3
+previous_medication_main,fix:medication,0.3104170643254467,0.310,,FALSE,,10.515064942880208,9
+previous_medication_main,Group:Sex,0.680835091397229,0.681,,FALSE,,0.1691873007474984,1
+previous_medication_main,fix:Sex,7.168115439501648e-10,<0.001 ***,***,TRUE,significant,45.52159160427021,3
+previous_medication_main,Group:fix:medication,0.3837471124819469,0.384,,FALSE,,9.60092644132821,9
+previous_medication_main,Group:fix:Sex,8.199197682363747e-4,<0.001 ***,***,TRUE,significant,16.686181615329406,3
+previous_medication_by_aoi,(Intercept),3.1998878284353454e-17,<0.001 ***,***,TRUE,significant,71.21718530609573,1
+previous_medication_by_aoi,Group,0.6133242163832398,0.613,,FALSE,,0.2553625233584756,1
+previous_medication_by_aoi,fix,5.982476399539704e-11,<0.001 ***,***,TRUE,significant,50.589793040734314,3
+previous_medication_by_aoi,medication,0.6591080334978912,0.659,,FALSE,,1.6012428991647811,3
+previous_medication_by_aoi,Sex,0.4878216984249817,0.488,,FALSE,,0.4813273446885472,1
+previous_medication_by_aoi,session,0.9637017147282027,0.964,,FALSE,,0.0739469136181061,2
+previous_medication_by_aoi,previous_medication,0.9561517379788077,0.956,,FALSE,,0.3203765414528888,3
+previous_medication_by_aoi,Group:fix,0.04680238548154687,0.047 *,*,TRUE,significant,7.962058471464939,3
+previous_medication_by_aoi,Group:medication,0.9523012139123421,0.952,,FALSE,,0.34018781196315995,3
+previous_medication_by_aoi,fix:medication,0.3990077773704583,0.399,,FALSE,,9.424943199242056,9
+previous_medication_by_aoi,Group:Sex,0.7494218125209943,0.749,,FALSE,,0.10201753809486781,1
+previous_medication_by_aoi,fix:Sex,3.347848865834063e-10,<0.001 ***,***,TRUE,significant,47.076462653045674,3
+previous_medication_by_aoi,fix:previous_medication,0.16672628408319057,0.167,,FALSE,,12.909888536577018,9
+previous_medication_by_aoi,Group:fix:medication,0.7464074429269634,0.746,,FALSE,,5.934982984362136,9
+previous_medication_by_aoi,Group:fix:Sex,4.2316196660317074e-4,<0.001 ***,***,TRUE,significant,18.08143758139655,3
+previous_components_main,(Intercept),3.456352554269437e-21,<0.001 ***,***,TRUE,significant,89.26316427660407,1
+previous_components_main,Group,0.6096945818041111,0.610,,FALSE,,0.26061991890956293,1
+previous_components_main,fix,1.4425626213548237e-13,<0.001 ***,***,TRUE,significant,62.85470592011982,3
+previous_components_main,medication,0.7323241411425007,0.732,,FALSE,,1.2865719577769812,3
+previous_components_main,Sex,0.49235208088991916,0.492,,FALSE,,0.4713819764238907,1
+previous_components_main,session,0.9737606483969736,0.974,,FALSE,,0.0531794928087323,2
+previous_components_main,previous_nal,0.834974601480891,0.835,,FALSE,,0.043399631782465184,1
+previous_components_main,previous_oxt,0.9148404279428067,0.915,,FALSE,,0.011435126157144466,1
+previous_components_main,Group:fix,0.08562052198086674,0.086 .,.,FALSE,trend,6.604781506702735,3
+previous_components_main,Group:medication,0.9693663203332764,0.969,,FALSE,,0.2487153841637361,3
+previous_components_main,fix:medication,0.3146707332181464,0.315,,FALSE,,10.458315127008342,9
+previous_components_main,Group:Sex,0.6629277815629959,0.663,,FALSE,,0.18998658665049808,1
+previous_components_main,fix:Sex,7.144869567033156e-10,<0.001 ***,***,TRUE,significant,45.52822780608795,3
+previous_components_main,Group:fix:medication,0.3890920917215445,0.389,,FALSE,,9.538821432537107,9
+previous_components_main,Group:fix:Sex,8.373889841712172e-4,<0.001 ***,***,TRUE,significant,16.64161732970431,3
+previous_components_by_aoi,(Intercept),1.747241757161596e-21,<0.001 ***,***,TRUE,significant,90.61282488824394,1
+previous_components_by_aoi,Group,0.5912869430535329,0.591,,FALSE,,0.28833894771099416,1
+previous_components_by_aoi,fix,2.333561675330488e-12,<0.001 ***,***,TRUE,significant,57.19624971039551,3
+previous_components_by_aoi,medication,0.7281045395228212,0.728,,FALSE,,1.3043324986278972,3
+previous_components_by_aoi,Sex,0.4540451385485336,0.454,,FALSE,,0.560534067824987,1
+previous_components_by_aoi,session,0.9742771576399872,0.974,,FALSE,,0.052118919438920656,2
+previous_components_by_aoi,previous_nal,0.8317612453552574,0.832,,FALSE,,0.04513213542961241,1
+previous_components_by_aoi,previous_oxt,0.8980507021768455,0.898,,FALSE,,0.016415805079573863,1
+previous_components_by_aoi,Group:fix,0.05112191781370644,0.051 .,.,FALSE,trend,7.76520062893047,3
+previous_components_by_aoi,Group:medication,0.9695808417767344,0.970,,FALSE,,0.24749325021141957,3
+previous_components_by_aoi,fix:medication,0.4431421621924063,0.443,,FALSE,,8.936652852944983,9
+previous_components_by_aoi,Group:Sex,0.6542539088404283,0.654,,FALSE,,0.20057898812208946,1
+previous_components_by_aoi,fix:Sex,3.2573078256991645e-10,<0.001 ***,***,TRUE,significant,47.13243741303882,3
+previous_components_by_aoi,fix:previous_nal,0.5790457246241618,0.579,,FALSE,,1.9681395480973718,3
+previous_components_by_aoi,fix:previous_oxt,0.08658800812950838,0.087 .,.,FALSE,trend,6.579274243979272,3
+previous_components_by_aoi,Group:fix:medication,0.7130372481461104,0.713,,FALSE,,6.265918127202581,9
+previous_components_by_aoi,Group:fix:Sex,6.041799963314524e-4,<0.001 ***,***,TRUE,significant,17.33093956206734,3

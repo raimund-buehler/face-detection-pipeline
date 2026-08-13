@@ -1,0 +1,17 @@
+dataset,fix,Group,Sex,n,rows
+extreme_cases_removed,Eyes,ASD,Female,13,13
+extreme_cases_removed,Eyes,ASD,Male,8,8
+extreme_cases_removed,Eyes,CTRL,Female,11,11
+extreme_cases_removed,Eyes,CTRL,Male,13,13
+extreme_cases_removed,Background,ASD,Female,13,13
+extreme_cases_removed,Background,ASD,Male,8,8
+extreme_cases_removed,Background,CTRL,Female,11,11
+extreme_cases_removed,Background,CTRL,Male,13,13
+full,Eyes,ASD,Female,13,13
+full,Eyes,ASD,Male,11,11
+full,Eyes,CTRL,Female,14,14
+full,Eyes,CTRL,Male,13,13
+full,Background,ASD,Female,13,13
+full,Background,ASD,Male,11,11
+full,Background,CTRL,Female,14,14
+full,Background,CTRL,Male,13,13

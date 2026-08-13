@@ -1,0 +1,15 @@
+predictor,group,Sex,n
+medication_type,No medication record,f,7
+medication_type,No medication record,m,7
+medication_type,Other/multiple medication,f,8
+medication_type,Other/multiple medication,m,5
+medication_type,SSRI/SNRI only,f,5
+medication_type,SSRI/SNRI only,m,1
+disorder_type,ADHD only,f,6
+disorder_type,ADHD only,m,2
+disorder_type,Depression only,f,5
+disorder_type,Depression only,m,1
+disorder_type,No disorder record,f,5
+disorder_type,No disorder record,m,6
+disorder_type,Other/multiple disorder,f,4
+disorder_type,Other/multiple disorder,m,4

@@ -1,0 +1,40 @@
+Carryover sensitivity analysis for the main fixation-duration model
+
+Current-session model on sessions 2-4:
+percentage_fix_duration ~ Group * fix * medication + Group *      fix * Sex + session
+
+Carryover predictors encode the treatment administered in the immediately preceding session.
+Session 1 is excluded because it has no preceding treatment.
+
+N observations: 651
+N participants: 57
+
+Carryover term tests:
+previous_medication_main / previous_medication: chi-square(3) = 0.17, p = 0.982
+previous_medication_by_aoi / previous_medication: chi-square(3) = 0.32, p = 0.956
+previous_components_main / previous_nal: chi-square(1) = 0.04, p = 0.835
+previous_components_main / previous_oxt: chi-square(1) = 0.01, p = 0.915
+previous_components_by_aoi / previous_nal: chi-square(1) = 0.05, p = 0.832
+previous_components_by_aoi / previous_oxt: chi-square(1) = 0.02, p = 0.898
+
+Key current-medication terms across models:
+base_sessions_2_to_4 / medication: chi-square(3) = 1.37, p = 0.713
+base_sessions_2_to_4 / Group:medication: chi-square(3) = 0.26, p = 0.967
+base_sessions_2_to_4 / fix:medication: chi-square(9) = 10.43, p = 0.317
+base_sessions_2_to_4 / Group:fix:medication: chi-square(9) = 9.52, p = 0.391
+previous_medication_main / medication: chi-square(3) = 1.40, p = 0.706
+previous_medication_main / Group:medication: chi-square(3) = 0.29, p = 0.963
+previous_medication_main / fix:medication: chi-square(9) = 10.52, p = 0.310
+previous_medication_main / Group:fix:medication: chi-square(9) = 9.60, p = 0.384
+previous_medication_by_aoi / medication: chi-square(3) = 1.60, p = 0.659
+previous_medication_by_aoi / Group:medication: chi-square(3) = 0.34, p = 0.952
+previous_medication_by_aoi / fix:medication: chi-square(9) = 9.42, p = 0.399
+previous_medication_by_aoi / Group:fix:medication: chi-square(9) = 5.93, p = 0.746
+previous_components_main / medication: chi-square(3) = 1.29, p = 0.732
+previous_components_main / Group:medication: chi-square(3) = 0.25, p = 0.969
+previous_components_main / fix:medication: chi-square(9) = 10.46, p = 0.315
+previous_components_main / Group:fix:medication: chi-square(9) = 9.54, p = 0.389
+previous_components_by_aoi / medication: chi-square(3) = 1.30, p = 0.728
+previous_components_by_aoi / Group:medication: chi-square(3) = 0.25, p = 0.970
+previous_components_by_aoi / fix:medication: chi-square(9) = 8.94, p = 0.443
+previous_components_by_aoi / Group:fix:medication: chi-square(9) = 6.27, p = 0.713

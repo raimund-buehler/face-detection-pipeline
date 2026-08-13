@@ -1,0 +1,11 @@
+predictor,model_step,formula,n_observations,n_participants,AIC,BIC,logLik,converged,pdHess
+medication_type,base,percentage_fix_duration ~ fix * medication + fix * Sex + session,428,31,-486.42535575188515,-389.00639905792207,267.2126778759426,TRUE,TRUE
+medication_type,overall,percentage_fix_duration ~ fix * medication + fix * Sex + session +      medication_type_group,428,31,-483.9880311457242,-378.4508280605975,267.9940155728621,TRUE,TRUE
+medication_type,aoi,percentage_fix_duration ~ fix * medication + fix * Sex + session +      medication_type_group * fix,428,31,-500.2915649536609,-370.3996226950434,282.14578247683045,TRUE,TRUE
+medication_type,medication,percentage_fix_duration ~ fix * medication + fix * Sex + session +      medication_type_group * fix + medication_type_group * medication,428,31,-488.59923718934556,-334.35255575723727,282.2996185946728,TRUE,TRUE
+medication_type,responsiveness,percentage_fix_duration ~ fix * medication + fix * Sex + session +      medication_type_group * fix * medication,428,31,-455.73939243338975,-228.42849348080915,283.8696962166949,TRUE,TRUE
+disorder_type,base,percentage_fix_duration ~ fix * medication + fix * Sex + session,428,31,-486.42535575188515,-389.00639905792207,267.2126778759426,TRUE,TRUE
+disorder_type,overall,percentage_fix_duration ~ fix * medication + fix * Sex + session +      disorder_type_group,428,31,-480.6562456324667,-371.05991935175825,267.32812281623336,TRUE,TRUE
+disorder_type,aoi,percentage_fix_duration ~ fix * medication + fix * Sex + session +      disorder_type_group * fix,428,31,-493.4704339481427,-347.34199890719805,282.73521697407136,TRUE,TRUE
+disorder_type,medication,percentage_fix_duration ~ fix * medication + fix * Sex + session +      disorder_type_group * fix + disorder_type_group * medication,428,31,-475.90055527246477,-293.24001147128394,282.9502776362324,TRUE,TRUE
+disorder_type,responsiveness,percentage_fix_duration ~ fix * medication + fix * Sex + session +      disorder_type_group * fix * medication,428,31,-431.86346590111964,-139.60659581923028,287.9317329505598,TRUE,TRUE

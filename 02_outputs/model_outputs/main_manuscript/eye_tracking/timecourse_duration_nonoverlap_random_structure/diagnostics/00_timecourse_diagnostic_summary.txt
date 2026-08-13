@@ -1,0 +1,7 @@
+Non-overlapping timecourse model diagnostics
+
+DHARMa simulations per model: 500
+
+Eyes_eyes_best_aic_subject_session: uniformity p = 0.000, dispersion p = 0.236, outlier p = 0.042, zero-inflation p = 1.000, overdispersion ratio = 0.858, overdispersion p = 0.176
+Background_background_best_aic_medication_diag: uniformity p = 0.000, dispersion p = 0.304, outlier p = 0.006, zero-inflation p = 1.000, overdispersion ratio = 0.916, overdispersion p = 0.288
+Background_background_best_bic_subject_session: uniformity p = 0.000, dispersion p = 0.172, outlier p = 0.000, zero-inflation p = 1.000, overdispersion ratio = 0.897, overdispersion p = 0.152

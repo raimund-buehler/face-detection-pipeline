@@ -1,0 +1,9 @@
+Scenario,Injected shift,Successful fits,Detection rate: Group x AOI x medication,Median p: Group x AOI x medication,Detection rate: medication main effect,Median p: medication main effect
+Null baseline,0%,100/100,5%,0.595,15%,0.394
++/-2% shift,2%,100/100,9%,0.445,13%,0.443
++/-5% shift,5%,100/100,16%,0.253,9%,0.393
++/-8% shift,8%,100/100,27%,0.181,9%,0.405
++/-12% shift,12%,100/100,55%,0.037,12%,0.431
++/-16% shift,16%,100/100,81%,0.001,10%,0.381
++/-20% shift,20%,100/100,99%,0.000,8%,0.434
++/-24% shift,24%,100/100,100%,0.000,11%,0.352

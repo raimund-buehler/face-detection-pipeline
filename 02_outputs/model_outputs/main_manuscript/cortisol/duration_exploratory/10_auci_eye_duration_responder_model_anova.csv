@@ -1,0 +1,10 @@
+model,term,Chisq,Df,Pr(>Chisq),p_display,sig,significant_0_05
+auci_eye_duration_responder_model,(Intercept),32.82396960599056,1,1.0089307082152275e-8,<0.001,***,TRUE
+auci_eye_duration_responder_model,Group,6.5599134971510376,1,0.010430143634601104,0.010,*,TRUE
+auci_eye_duration_responder_model,AUCi_response,2.0836150302898386,2,0.3528163843082146,0.353,,FALSE
+auci_eye_duration_responder_model,NAL_status,0.09778764625587151,1,0.754500873334793,0.755,,FALSE
+auci_eye_duration_responder_model,session,5.26992260552432,3,0.15306601728563757,0.153,,FALSE
+auci_eye_duration_responder_model,Group:AUCi_response,6.031090880577604,2,0.049019091206711204,0.049,*,TRUE
+auci_eye_duration_responder_model,Group:NAL_status,4.866377009668621,1,0.02738493588940523,0.027,*,TRUE
+auci_eye_duration_responder_model,AUCi_response:NAL_status,4.599009634197554,2,0.10030850248198117,0.100,,FALSE
+auci_eye_duration_responder_model,Group:AUCi_response:NAL_status,3.6614087253585637,2,0.16030061822817404,0.160,,FALSE

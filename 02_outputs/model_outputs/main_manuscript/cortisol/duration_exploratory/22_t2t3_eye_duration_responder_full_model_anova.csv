@@ -1,0 +1,7 @@
+model,term,Chisq,Df,Pr(>Chisq),p_display,sig,significant_0_05
+t2t3_eye_duration_responder_full_model,(Intercept),24.5361431420699,1,7.292892002279825e-7,<0.001,***,TRUE
+t2t3_eye_duration_responder_full_model,Group,2.3501095805365755,1,0.12527420102209225,0.125,,FALSE
+t2t3_eye_duration_responder_full_model,T2T3_response,1.9508431716431218,2,0.3770333681302505,0.377,,FALSE
+t2t3_eye_duration_responder_full_model,medication,2.4183647628759073,3,0.4902251837531624,0.490,,FALSE
+t2t3_eye_duration_responder_full_model,session,4.468828017619413,3,0.21508766710314411,0.215,,FALSE
+t2t3_eye_duration_responder_full_model,Group:T2T3_response,2.3157744086678003,2,0.3141492133063291,0.314,,FALSE

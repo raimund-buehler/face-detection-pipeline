@@ -1,0 +1,4 @@
+model,T2T3_response,term,contrast,null.value,odds.ratio,std.error,df,null,statistic,p.value,p_display,sig
+t2t3_eye_duration_responder_full_model,Decrease,Group,CTRL / ASD,0,1.4496444937397255,0.35112670844535016,Inf,1,1.5330067124890796,0.1252742010220916,0.125,
+t2t3_eye_duration_responder_full_model,Non-response,Group,CTRL / ASD,0,1.2033145404585819,0.32259668585990536,Inf,1,0.6903644826967505,0.4899650063770192,0.490,
+t2t3_eye_duration_responder_full_model,Increase,Group,CTRL / ASD,0,0.9906588965878994,0.2813557311870509,Inf,1,-0.03304478207521633,0.9736388761927225,0.974,

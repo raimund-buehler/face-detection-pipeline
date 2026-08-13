@@ -1,0 +1,2 @@
+target,target_power,estimated_shift,lower_grid_shift,upper_grid_shift,note
+Group x AOI x medication,0.8,0.15846153846153846,0.12,0.16,Linear interpolation between nearest simulated grid points

@@ -1,0 +1,7 @@
+model,term,Chisq,Df,Pr(>Chisq),p_display,sig,significant_0_05
+auci_eye_duration_trim90_model,(Intercept),23.50205771191195,1,1.2478024054157016e-6,<0.001,***,TRUE
+auci_eye_duration_trim90_model,Group,1.6225799586388914,1,0.20273242411724063,0.203,,FALSE
+auci_eye_duration_trim90_model,AUCi_trim_z,9.912305679905488,1,0.0016417730799796186,0.002,**,TRUE
+auci_eye_duration_trim90_model,medication,4.493620115234239,3,0.21286006495570378,0.213,,FALSE
+auci_eye_duration_trim90_model,session,6.228378346920203,3,0.10101262436367908,0.101,,FALSE
+auci_eye_duration_trim90_model,Group:AUCi_trim_z,12.633852202117557,1,3.788237350968905e-4,<0.001,***,TRUE

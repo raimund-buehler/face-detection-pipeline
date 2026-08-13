@@ -1,0 +1,7 @@
+Saved non-overlapping time-bin models from random-structure sensitivity check.
+
+AIC-selected full-sample Eyes model: (1 | ID) + (1 | subject_session).
+AIC-selected full-sample Background model: (1 | ID) + diag(0 + medication | ID).
+BIC selected the simpler subject-session model for Background, so that model is saved as an additional conservative reference.
+
+diag(0 + medication | ID) estimates separate participant-level random deviations for each medication level without estimating correlations among those deviations.

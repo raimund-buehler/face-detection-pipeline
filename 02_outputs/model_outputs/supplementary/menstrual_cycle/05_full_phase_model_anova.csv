@@ -1,0 +1,18 @@
+model,term,p_value,p_display,sig,significant_0_05,highlight,Chisq,Df
+full_phase_duration_beta,(Intercept),7.009788147083706e-16,<0.001 ***,***,TRUE,significant,65.13052247877512,1
+full_phase_duration_beta,Group,0.6972291890327164,0.697,,FALSE,,0.15137039043769784,1
+full_phase_duration_beta,fix,7.428788891161587e-11,<0.001 ***,***,TRUE,significant,50.148300241121504,3
+full_phase_duration_beta,medication,0.9212894874050013,0.921,,FALSE,,0.48905421675831195,3
+full_phase_duration_beta,phase,0.8241907293981477,0.824,,FALSE,,0.049354267649518994,1
+full_phase_duration_beta,session,0.9972876148424258,0.997,,FALSE,,0.047475892860386976,3
+full_phase_duration_beta,Group:fix,0.5671059134244856,0.567,,FALSE,,2.0256215953410943,3
+full_phase_duration_beta,Group:medication,0.9939784483473245,0.994,,FALSE,,0.08134080627256843,3
+full_phase_duration_beta,fix:medication,0.8883104992596749,0.888,,FALSE,,4.330973622617032,9
+full_phase_duration_beta,Group:phase,0.9523854168579446,0.952,,FALSE,,0.003565462564469722,1
+full_phase_duration_beta,fix:phase,0.8117580820464723,0.812,,FALSE,,0.9565740316158964,3
+full_phase_duration_beta,medication:phase,0.8507232638603996,0.851,,FALSE,,0.7947461675220746,3
+full_phase_duration_beta,Group:fix:medication,0.932992593138116,0.933,,FALSE,,3.6484393043022103,9
+full_phase_duration_beta,Group:fix:phase,0.1810943487710661,0.181,,FALSE,,4.876144883313667,3
+full_phase_duration_beta,Group:medication:phase,0.9921394453574839,0.992,,FALSE,,0.09746873726416114,3
+full_phase_duration_beta,fix:medication:phase,0.7476220024978979,0.748,,FALSE,,5.922772468491818,9
+full_phase_duration_beta,Group:fix:medication:phase,0.5545317007238876,0.555,,FALSE,,7.798908452991473,9

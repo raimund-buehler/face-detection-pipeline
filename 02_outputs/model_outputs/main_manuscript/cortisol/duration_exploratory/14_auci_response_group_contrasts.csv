@@ -1,0 +1,7 @@
+model,NAL_status,AUCi_response,term,contrast,null.value,odds.ratio,std.error,df,null,statistic,p.value,p_display,sig
+auci_eye_duration_responder_model,Non-NAL,Decrease,Group,CTRL / ASD,0,1.8929904822828962,0.4716583052393219,Inf,1,2.5612328080732993,0.0104301436346011,0.010,*
+auci_eye_duration_responder_model,NAL-containing,Decrease,Group,CTRL / ASD,0,1.1166276507412451,0.3009545856636193,Inf,1,0.40929323713378024,0.6823244779438897,0.682,
+auci_eye_duration_responder_model,Non-NAL,Non-response,Group,CTRL / ASD,0,0.9297394972136408,0.2872107240846271,Inf,1,-0.23582791339962061,0.813566207200763,0.814,
+auci_eye_duration_responder_model,NAL-containing,Non-response,Group,CTRL / ASD,0,1.1876999314507417,0.3810173208180817,Inf,1,0.5362131207402296,0.5918112664944378,0.592,
+auci_eye_duration_responder_model,Non-NAL,Increase,Group,CTRL / ASD,0,0.626734324300349,0.5419292765306675,Inf,1,-0.5403485127919241,0.5889567080823457,0.589,
+auci_eye_duration_responder_model,NAL-containing,Increase,Group,CTRL / ASD,0,0.8747978310344677,0.31480270715772274,Inf,1,-0.3717093773035947,0.7101092424236625,0.710,
