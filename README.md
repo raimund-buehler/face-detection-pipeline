@@ -25,8 +25,8 @@ face and its keypoints are detected by the code, the gaze path is synthetic.
 
 ![The AOI overlay, on a generated face](docs/detection-demo.png)
 
-Orange marks the face, red the eyes, blue the mouth, and everything outside is
-background. The four areas are mutually exclusive — the eye and mouth regions are
+The pale wash marks the face, red the eyes, blue the mouth, and everything
+outside is background. The four areas are mutually exclusive — the eye and mouth regions are
 carved out of the face, so every gaze sample and fixation belongs to exactly one
 of them, which is what the labels on the right report. The dotted trail is the
 gaze path and the cyan circle a fixation; here the gaze has left the eyes and

@@ -31,10 +31,14 @@ import matplotlib
 matplotlib.use("Agg")
 from matplotlib import pyplot
 from matplotlib.patches import Ellipse
+import matplotlib.patheffects as pe
 
 HERE = Path(__file__).resolve().parent
-FACE_COLOR, EYES_COLOR, MOUTH_COLOR = "orange", "red", "blue"
-FACE_RGB = (1.00, 0.65, 0.00)
+# draw.py outlines the face in orange. Here the face area is shaded rather than
+# just outlined, and a warm wash over skin reads badly, so it uses a neutral
+# slate instead; the eye and mouth colours are unchanged.
+FACE_COLOR, EYES_COLOR, MOUTH_COLOR = "#e8edf4", "red", "blue"
+FACE_RGB = (0.88, 0.91, 0.96)
 EYES_RGB = (0.90, 0.15, 0.15)
 MOUTH_RGB = (0.15, 0.30, 0.95)
 GAZE_POINT = (1.0, 0.7, 0.25)
@@ -142,13 +146,18 @@ def main():
     yy, xx = np.mgrid[0:fh, 0:fw]
     masks = classify(xx, yy, face, eyes, mouth)
     overlay = np.zeros((fh, fw, 4))
-    for name, rgb in (("face", FACE_RGB), ("eyes", EYES_RGB), ("mouth", MOUTH_RGB)):
-        overlay[masks[name]] = (*rgb, 0.24)
+    for name, rgb, alpha in (("face", FACE_RGB, 0.40),
+                             ("eyes", EYES_RGB, 0.26),
+                             ("mouth", MOUTH_RGB, 0.26)):
+        overlay[masks[name]] = (*rgb, alpha)
     ax.imshow(overlay, zorder=3)
 
     for ell, col in ((face, FACE_COLOR), (eyes, EYES_COLOR), (mouth, MOUTH_COLOR)):
-        ax.add_patch(Ellipse(ell[0], ell[1], ell[2], angle=ell[3], fill=False,
-                             edgecolor=col, lw=2.2, zorder=4))
+        patch = Ellipse(ell[0], ell[1], ell[2], angle=ell[3], fill=False,
+                        edgecolor=col, lw=2.2, zorder=4)
+        if col == FACE_COLOR:      # keep the pale outline legible on any background
+            patch.set_path_effects([pe.withStroke(linewidth=3.6, foreground="#33404d")])
+        ax.add_patch(patch)
 
     ax.scatter(gx, gy, color=GAZE_POINT, s=90, alpha=0.22, zorder=5)
     ax.plot(gx, gy, color=GAZE_PATH, lw=1.4, zorder=5)
