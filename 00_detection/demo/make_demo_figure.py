@@ -1,54 +1,84 @@
 """Render a demonstration of what an annotated frame from this pipeline looks like.
 
 The real pipeline draws its overlay onto the scene-camera video of an eye-tracking
-session. That footage shows the participant's conversation partner and carries the
-participant's gaze on top of it, so no real frame can be published. This script
-reproduces the same overlay — identical colours, geometry and hit-test semantics as
-``draw.py`` and ``make_frame.py`` — over a schematic stand-in face with an invented
-gaze path, so the output is illustrative and contains no data of any kind.
+session. That footage shows the participant's conversation partner, with the
+participant's gaze drawn on top, so no real frame can be published. This script
+produces the same overlay over a public-domain stock portrait instead: the face is
+detected for real, and only the gaze path is invented.
 
     python 00_detection/demo/make_demo_figure.py -o docs/detection-demo.png
 
-Only numpy, matplotlib and Pillow are needed; the detector itself is not run.
+The AOI geometry is the same as ``draw.py``: the face ellipse spans the detector's
+bounding box at 1.2x its height, and the eye and mouth ellipses span their two
+keypoints with the box width and 0.3x its height, rotated to match.
+
+By default the committed detection in ``sample_frame_detection.json`` is used, so
+the figure reproduces without a detector installed. Pass ``--detect`` to re-run
+detection (MTCNN as used by the pipeline, else OpenCV's YuNet).
 """
 
 import argparse
+import json
 from math import atan2, degrees
+from pathlib import Path
 
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")
 from matplotlib import pyplot
 from matplotlib.patches import Ellipse
 
-# Frame geometry and palette, matching make_frame.py / draw.py.
-FRAME_W, FRAME_H = 1280, 720
+HERE = Path(__file__).resolve().parent
 FACE_COLOR, EYES_COLOR, MOUTH_COLOR = "orange", "red", "blue"
 GAZE_POINT = (1.0, 0.7, 0.25)
 GAZE_PATH = (0.0, 1.0, 0.4)
 FIXATION = (0.0, 1.0, 1.0)
-LABEL_X = 980
 
 
-def ellipse_from_box(x, y, width, height):
-    """Face AOI: centred on the detector's bounding box, 1.2x its height.
+def detect(image_path):
+    """Locate one face and its five keypoints, preferring the pipeline's detector."""
+    try:
+        from mtcnn import MTCNN
+        import cv2
+        img = cv2.cvtColor(cv2.imread(str(image_path)), cv2.COLOR_BGR2RGB)
+        res = MTCNN().detect_faces(img)[0]
+        return {"box": [float(v) for v in res["box"]],
+                "keypoints": {k: [float(v[0]), float(v[1])]
+                              for k, v in res["keypoints"].items()},
+                "score": float(res["confidence"]), "detector": "mtcnn"}
+    except Exception:
+        pass
+    import cv2
+    model = HERE / "yunet.onnx"
+    if not model.exists():
+        raise SystemExit("no detector available; run without --detect to use the "
+                         "committed detection")
+    img = cv2.imread(str(image_path))
+    h, w = img.shape[:2]
+    det = cv2.FaceDetectorYN.create(str(model), "", (w, h), score_threshold=0.6)
+    _, faces = det.detect(img)
+    f = faces[0]
+    names = ["right_eye", "left_eye", "nose", "mouth_right", "mouth_left"]
+    return {"box": [float(v) for v in f[:4]],
+            "keypoints": {n: [float(f[4 + 2 * i]), float(f[5 + 2 * i])]
+                          for i, n in enumerate(names)},
+            "score": float(f[-1]), "detector": "yunet"}
 
-    Mirrors draw_ellipsis(..., face=True).
-    """
-    return (x + width / 2, y + height / 2), width, height * 1.2, 0.0
+
+def face_ellipse(box):
+    x, y, w, h = box
+    return (x + w / 2, y + h / 2), w, h * 1.2, 0.0
 
 
-def ellipse_from_points(p_right, p_left, width, height):
-    """Eye and mouth AOIs: spanned between two keypoints and rotated to match them.
-
-    Mirrors draw_ellipsis(..., face=False).
-    """
+def span_ellipse(p_right, p_left, box):
+    """Eye and mouth AOIs, spanned between two keypoints — mirrors draw_ellipsis."""
+    _, _, w, h = box
     diff = np.subtract(p_right, p_left)
     center = np.add(p_left, diff / 2)
-    angle = degrees(atan2(diff[1], diff[0]))
-    return tuple(center), width / 2.5, height / 5, angle
+    return tuple(center), w, h * 0.3, degrees(atan2(diff[1], diff[0]))
 
 
 def inside(point, center, w, h, angle):
-    """Hit test for a gaze or fixation sample against one AOI ellipse."""
     a = np.radians(angle)
     dx, dy = point[0] - center[0], point[1] - center[1]
     xr = dx * np.cos(a) + dy * np.sin(a)
@@ -56,82 +86,80 @@ def inside(point, center, w, h, angle):
     return (xr / (w / 2)) ** 2 + (yr / (h / 2)) ** 2 <= 1.0
 
 
-def draw_stand_in_face(ax, box):
-    """A deliberately schematic head, so nothing here resembles a real person."""
-    x, y, w, h = box
-    ax.add_patch(Ellipse((x + w / 2, y + h / 2), w * 1.02, h * 1.25,
-                         facecolor="#d8d2cc", edgecolor="none", zorder=1))
-    ax.add_patch(Ellipse((x + w / 2, y + h * 1.46), w * 1.25, h * 0.5,
-                         facecolor="#2f3640", edgecolor="none", zorder=0))
-    for cx in (x + w * 0.31, x + w * 0.69):
-        ax.add_patch(Ellipse((cx, y + h * 0.40), w * 0.13, h * 0.07,
-                             facecolor="#3a3a3a", edgecolor="none", zorder=2))
-    ax.add_patch(Ellipse((x + w / 2, y + h * 0.74), w * 0.26, h * 0.05,
-                         facecolor="#8c5b5b", edgecolor="none", zorder=2))
-
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("-o", "--out", default="docs/detection-demo.png")
+    ap.add_argument("-i", "--image", default=str(HERE / "sample_frame.jpg"))
+    ap.add_argument("--detect", action="store_true",
+                    help="re-run face detection instead of using the committed result")
     ap.add_argument("--dpi", type=int, default=150)
     args = ap.parse_args()
 
-    # A plausible detection: bounding box plus the five MTCNN keypoints.
-    box = (470.0, 150.0, 330.0, 380.0)
-    x, y, w, h = box
-    right_eye = (x + w * 0.31, y + h * 0.40)
-    left_eye = (x + w * 0.69, y + h * 0.40)
-    mouth_right = (x + w * 0.37, y + h * 0.74)
-    mouth_left = (x + w * 0.63, y + h * 0.74)
+    det_file = HERE / "sample_frame_detection.json"
+    det = detect(args.image) if args.detect else json.loads(det_file.read_text())
 
-    face_c, face_w, face_h, face_a = ellipse_from_box(x, y, w, h)
-    eyes_c, eyes_w, eyes_h, eyes_a = ellipse_from_points(right_eye, left_eye, w, h)
-    mouth_c, mouth_w, mouth_h, mouth_a = ellipse_from_points(mouth_right, mouth_left, w, h)
+    box = det["box"]
+    kp = det["keypoints"]
+    face_c, face_w, face_h, face_a = face_ellipse(box)
+    eyes_c, eyes_w, eyes_h, eyes_a = span_ellipse(kp["right_eye"], kp["left_eye"], box)
+    mouth_c, mouth_w, mouth_h, mouth_a = span_ellipse(kp["mouth_right"], kp["mouth_left"], box)
 
-    # An invented gaze excursion running from the eye region down to the mouth, so
-    # the hit-test labels below show both a miss and a hit rather than all misses.
-    t = np.linspace(0, 1, 42)
-    gaze_x = eyes_c[0] - 55 + (mouth_c[0] - eyes_c[0] + 55) * t + 22 * np.sin(t * 7)
-    gaze_y = eyes_c[1] + (mouth_c[1] - eyes_c[1]) * t ** 1.4 + 12 * np.cos(t * 9)
+    img = pyplot.imread(args.image)
+    fh, fw = img.shape[:2]
+
+    # An invented scanpath: across one eye to the other, then down to the mouth.
+    # It ends inside the mouth AOI so the labels show both a hit and a miss.
+    right_eye, left_eye = np.array(kp["right_eye"]), np.array(kp["left_eye"])
+    waypoints = np.array([right_eye, (right_eye + left_eye) / 2, left_eye,
+                          (left_eye + np.array(mouth_c)) / 2, np.array(mouth_c)])
+    u = np.linspace(0, len(waypoints) - 1, 70)
+    gx = np.interp(u, np.arange(len(waypoints)), waypoints[:, 0])
+    gy = np.interp(u, np.arange(len(waypoints)), waypoints[:, 1])
+    gx = gx + 13 * np.sin(u * 3.1)          # sampling jitter
+    gy = gy + 11 * np.cos(u * 3.7)
     fixation = (float(mouth_c[0]), float(mouth_c[1]))
 
-    fig, ax = pyplot.subplots(figsize=(FRAME_W / 100, FRAME_H / 100))
-    ax.set_facecolor("#11151a")
-    fig.patch.set_facecolor("#11151a")
-    draw_stand_in_face(ax, box)
+    fig, ax = pyplot.subplots(figsize=(fw / 100, fh / 100))
+    ax.imshow(img)
 
-    for (c, ew, eh, a), col in ((( face_c,  face_w,  face_h,  face_a), FACE_COLOR),
-                                (( eyes_c,  eyes_w,  eyes_h,  eyes_a), EYES_COLOR),
-                                ((mouth_c, mouth_w, mouth_h, mouth_a), MOUTH_COLOR)):
-        ax.add_patch(Ellipse(c, ew, eh, angle=a, fill=False, edgecolor=col, lw=2, zorder=4))
+    for (c, w, h, a), col in (((face_c, face_w, face_h, face_a), FACE_COLOR),
+                              ((eyes_c, eyes_w, eyes_h, eyes_a), EYES_COLOR),
+                              ((mouth_c, mouth_w, mouth_h, mouth_a), MOUTH_COLOR)):
+        ax.add_patch(Ellipse(c, w, h, angle=a, fill=False, edgecolor=col, lw=2.2, zorder=4))
 
-    ax.scatter(gaze_x, gaze_y, color=GAZE_POINT, s=100, alpha=0.2, zorder=5)
-    ax.plot(gaze_x, gaze_y, color=GAZE_PATH, lw=1, zorder=5)
-    ax.scatter(*fixation, color=FIXATION, s=200, alpha=0.5, facecolors="none", zorder=6)
-    ax.text(fixation[0] + 12, fixation[1] + 6, "f014", color=FIXATION, fontsize=9, zorder=6)
+    ax.scatter(gx, gy, color=GAZE_POINT, s=90, alpha=0.22, zorder=5)
+    ax.plot(gx, gy, color=GAZE_PATH, lw=1.4, zorder=5)
+    ax.scatter(*fixation, s=260, alpha=0.85, facecolors="none",
+               edgecolors=[FIXATION], linewidths=1.8, zorder=6)
+    ax.text(fixation[0] + 16, fixation[1] + 8, "f014", color=FIXATION,
+            fontsize=10, zorder=6)
 
-    # The six status labels, green where the sample falls inside the AOI.
     aois = (("face", face_c, face_w, face_h, face_a),
             ("eyes", eyes_c, eyes_w, eyes_h, eyes_a),
             ("mouth", mouth_c, mouth_w, mouth_h, mouth_a))
-    last_gaze = (float(gaze_x[-1]), float(gaze_y[-1]))
-    for n, (name, c, ew, eh, a) in enumerate(aois):
-        for prefix, pt, y0 in (("gaze", last_gaze, 40), ("fix", fixation, 160)):
-            hit = inside(pt, c, ew, eh, a)
-            ax.text(LABEL_X, y0 + n * 40, f"{prefix}_{name}",
-                    color="green" if hit else "red", fontsize=13, zorder=7)
+    last_gaze = (float(gx[-1]), float(gy[-1]))
+    label_x = fw - 165
+    for n, (name, c, w, h, a) in enumerate(aois):
+        for prefix, pt, y0 in (("gaze", last_gaze, 40), ("fix", fixation, 172)):
+            hit = inside(pt, c, w, h, a)
+            ax.text(label_x, y0 + n * 34, f"{prefix}_{name}",
+                    color="#31c452" if hit else "#f2545b", fontsize=13,
+                    fontweight="bold", zorder=7)
 
-    ax.text(30, 40, "synthetic demonstration — no participant data",
-            color="#7d8896", fontsize=11, style="italic", zorder=7)
+    ax.text(18, fh - 18,
+            "public-domain stock portrait · gaze path is synthetic · not a study participant",
+            color="#ffffff", fontsize=9.5, style="italic", va="bottom", zorder=7,
+            bbox=dict(boxstyle="round,pad=0.32", facecolor="#000000", alpha=0.45,
+                      edgecolor="none"))
 
-    ax.set_xlim(0, FRAME_W)
-    ax.set_ylim(FRAME_H, 0)          # image coordinates: origin top-left
+    ax.set_xlim(0, fw); ax.set_ylim(fh, 0)
     ax.set_xticks([]); ax.set_yticks([])
     for s in ax.spines.values():
         s.set_visible(False)
     fig.tight_layout(pad=0)
-    fig.savefig(args.out, dpi=args.dpi, facecolor=fig.get_facecolor())
-    print(f"wrote {args.out}")
+    fig.savefig(args.out, dpi=args.dpi, bbox_inches="tight", pad_inches=0)
+    print(f"wrote {args.out}  (detector: {det.get('detector', 'committed')}, "
+          f"score {det.get('score', float('nan')):.3f})")
 
 
 if __name__ == "__main__":
