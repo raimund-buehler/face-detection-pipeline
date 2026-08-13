@@ -3,14 +3,18 @@
 The real pipeline draws its overlay onto the scene-camera video of an eye-tracking
 session. That footage shows the participant's conversation partner, with the
 participant's gaze drawn on top, so no real frame can be published. This script
-produces the same overlay over a public-domain stock portrait instead: the face is
-detected for real, and only the gaze path is invented.
+produces the same overlay over a generated stand-in face: the face is detected for
+real, and only the gaze path is invented.
 
     python 00_detection/demo/make_demo_figure.py -o docs/detection-demo.png
 
 The AOI geometry is the same as ``draw.py``: the face ellipse spans the detector's
 bounding box at 1.2x its height, and the eye and mouth ellipses span their two
 keypoints with the box width and 0.3x its height, rotated to match.
+
+The four areas are shaded as the analysis treats them — mutually exclusive and
+exhaustive, following shared_transform_data.R: eyes and mouth take precedence over
+the face, "face" means the rest of the face, and "background" is everything else.
 
 By default the committed detection in ``sample_frame_detection.json`` is used, so
 the figure reproduces without a detector installed. Pass ``--detect`` to re-run
@@ -30,9 +34,13 @@ from matplotlib.patches import Ellipse
 
 HERE = Path(__file__).resolve().parent
 FACE_COLOR, EYES_COLOR, MOUTH_COLOR = "orange", "red", "blue"
+FACE_RGB = (1.00, 0.65, 0.00)
+EYES_RGB = (0.90, 0.15, 0.15)
+MOUTH_RGB = (0.15, 0.30, 0.95)
 GAZE_POINT = (1.0, 0.7, 0.25)
 GAZE_PATH = (0.0, 1.0, 0.4)
 FIXATION = (0.0, 1.0, 1.0)
+HIT, MISS = "#31c452", "#f2545b"
 
 
 def detect(image_path):
@@ -78,12 +86,23 @@ def span_ellipse(p_right, p_left, box):
     return tuple(center), w, h * 0.3, degrees(atan2(diff[1], diff[0]))
 
 
-def inside(point, center, w, h, angle):
+def inside(px, py, ell):
+    """Point-in-ellipse, vectorised so it also builds the shading masks."""
+    (cx, cy), w, h, angle = ell
     a = np.radians(angle)
-    dx, dy = point[0] - center[0], point[1] - center[1]
+    dx, dy = px - cx, py - cy
     xr = dx * np.cos(a) + dy * np.sin(a)
     yr = -dx * np.sin(a) + dy * np.cos(a)
     return (xr / (w / 2)) ** 2 + (yr / (h / 2)) ** 2 <= 1.0
+
+
+def classify(px, py, face, eyes, mouth):
+    """The four exclusive areas, as shared_transform_data.R derives them."""
+    in_face, in_eyes, in_mouth = (inside(px, py, e) for e in (face, eyes, mouth))
+    face_excl = in_face & ~in_eyes & ~in_mouth
+    background = ~face_excl & ~in_eyes & ~in_mouth
+    return {"face": face_excl, "eyes": in_eyes,
+            "mouth": in_mouth, "background": background}
 
 
 def main():
@@ -98,34 +117,38 @@ def main():
     det_file = HERE / "sample_frame_detection.json"
     det = detect(args.image) if args.detect else json.loads(det_file.read_text())
 
-    box = det["box"]
-    kp = det["keypoints"]
-    face_c, face_w, face_h, face_a = face_ellipse(box)
-    eyes_c, eyes_w, eyes_h, eyes_a = span_ellipse(kp["right_eye"], kp["left_eye"], box)
-    mouth_c, mouth_w, mouth_h, mouth_a = span_ellipse(kp["mouth_right"], kp["mouth_left"], box)
+    box, kp = det["box"], det["keypoints"]
+    face = face_ellipse(box)
+    eyes = span_ellipse(kp["right_eye"], kp["left_eye"], box)
+    mouth = span_ellipse(kp["mouth_right"], kp["mouth_left"], box)
 
     img = pyplot.imread(args.image)
     fh, fw = img.shape[:2]
 
     # An invented scanpath: across one eye to the other, then down to the mouth.
-    # It ends inside the mouth AOI so the labels show both a hit and a miss.
     right_eye, left_eye = np.array(kp["right_eye"]), np.array(kp["left_eye"])
+    mouth_c = np.array(mouth[0])
     waypoints = np.array([right_eye, (right_eye + left_eye) / 2, left_eye,
-                          (left_eye + np.array(mouth_c)) / 2, np.array(mouth_c)])
+                          (left_eye + mouth_c) / 2, mouth_c])
     u = np.linspace(0, len(waypoints) - 1, 70)
-    gx = np.interp(u, np.arange(len(waypoints)), waypoints[:, 0])
-    gy = np.interp(u, np.arange(len(waypoints)), waypoints[:, 1])
-    gx = gx + 13 * np.sin(u * 3.1)          # sampling jitter
-    gy = gy + 11 * np.cos(u * 3.7)
+    gx = np.interp(u, np.arange(len(waypoints)), waypoints[:, 0]) + 13 * np.sin(u * 3.1)
+    gy = np.interp(u, np.arange(len(waypoints)), waypoints[:, 1]) + 11 * np.cos(u * 3.7)
     fixation = (float(mouth_c[0]), float(mouth_c[1]))
 
     fig, ax = pyplot.subplots(figsize=(fw / 100, fh / 100))
     ax.imshow(img)
 
-    for (c, w, h, a), col in (((face_c, face_w, face_h, face_a), FACE_COLOR),
-                              ((eyes_c, eyes_w, eyes_h, eyes_a), EYES_COLOR),
-                              ((mouth_c, mouth_w, mouth_h, mouth_a), MOUTH_COLOR)):
-        ax.add_patch(Ellipse(c, w, h, angle=a, fill=False, edgecolor=col, lw=2.2, zorder=4))
+    # Shade the exclusive areas so the partition is visible, not just implied.
+    yy, xx = np.mgrid[0:fh, 0:fw]
+    masks = classify(xx, yy, face, eyes, mouth)
+    overlay = np.zeros((fh, fw, 4))
+    for name, rgb in (("face", FACE_RGB), ("eyes", EYES_RGB), ("mouth", MOUTH_RGB)):
+        overlay[masks[name]] = (*rgb, 0.24)
+    ax.imshow(overlay, zorder=3)
+
+    for ell, col in ((face, FACE_COLOR), (eyes, EYES_COLOR), (mouth, MOUTH_COLOR)):
+        ax.add_patch(Ellipse(ell[0], ell[1], ell[2], angle=ell[3], fill=False,
+                             edgecolor=col, lw=2.2, zorder=4))
 
     ax.scatter(gx, gy, color=GAZE_POINT, s=90, alpha=0.22, zorder=5)
     ax.plot(gx, gy, color=GAZE_PATH, lw=1.4, zorder=5)
@@ -134,17 +157,16 @@ def main():
     ax.text(fixation[0] + 16, fixation[1] + 8, "f014", color=FIXATION,
             fontsize=10, zorder=6)
 
-    aois = (("face", face_c, face_w, face_h, face_a),
-            ("eyes", eyes_c, eyes_w, eyes_h, eyes_a),
-            ("mouth", mouth_c, mouth_w, mouth_h, mouth_a))
-    last_gaze = (float(gx[-1]), float(gy[-1]))
-    label_x = fw - 165
-    for n, (name, c, w, h, a) in enumerate(aois):
-        for prefix, pt, y0 in (("gaze", last_gaze, 40), ("fix", fixation, 172)):
-            hit = inside(pt, c, w, h, a)
+    # Exactly one area per sample is green, because the areas do not overlap.
+    order = ["face", "eyes", "mouth", "background"]
+    label_x = fw - 190
+    for prefix, pt, y0 in (("gaze", (float(gx[-1]), float(gy[-1])), 40),
+                           ("fix", fixation, 210)):
+        hits = classify(np.array(pt[0]), np.array(pt[1]), face, eyes, mouth)
+        for n, name in enumerate(order):
             ax.text(label_x, y0 + n * 34, f"{prefix}_{name}",
-                    color="#31c452" if hit else "#f2545b", fontsize=13,
-                    fontweight="bold", zorder=7)
+                    color=HIT if bool(hits[name]) else MISS,
+                    fontsize=13, fontweight="bold", zorder=7)
 
     ax.set_xlim(0, fw); ax.set_ylim(fh, 0)
     ax.set_xticks([]); ax.set_yticks([])

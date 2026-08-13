@@ -34,3 +34,14 @@ The AOI geometry is taken from `../draw.py` unchanged: the face ellipse spans th
 bounding box at 1.2× its height, and the eye and mouth ellipses span their two
 keypoints using the box width and 0.3× its height, rotated to the angle between
 them.
+
+## Areas of interest
+
+`draw.py` tests each ellipse independently, so its three flags overlap — a sample
+on the eyes is also on the face. The analysis resolves that into four mutually
+exclusive, exhaustive areas in `01_analysis/00_preprocessing/shared_transform_data.R`:
+eyes and mouth take precedence, `face` means the remainder of the face, and
+`background` is everything else.
+
+The figure shades the areas as the analysis defines them, so the partition is
+visible rather than implied, and exactly one label per sample is green.
